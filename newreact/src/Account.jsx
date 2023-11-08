@@ -40,10 +40,13 @@ export default function Account() {
     setpopstate(false);
   };
 
+
+
+
   return (
     <div id="Outside_mainddiv">
       <div id="Sidebar">
-        <Typography id="options">LOGO</Typography>
+        <Typography id="options">LOGO</Typography> 
         <div id="alloptionconatainer">
           <div id="optioncontainer">
             <img id="optionicons" src={order} alt="order"></img>
