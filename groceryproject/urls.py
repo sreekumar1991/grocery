@@ -31,7 +31,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('',include('groceryapp.urls')),
     path("account/",TemplateView.as_view(template_name= os.path.join(BASE_DIR,'newreact/build/index.html'))), # React page loading index.html 
-    path('favicon.ico', serve, {'document_root': settings.REACT_PUBLIC_DIR, 'path': 'favicon.ico'}, name='favicon'),
+    path('favicon.ico', serve, {'document_root': settings.REACT_PUBLIC_DIR, 'path': 'favicon.ico'}, name='favicon'),# To load favicon 4 react page
 ]
 
 ########

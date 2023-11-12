@@ -118,8 +118,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'static'), os.path.join(BASE_DIR,'newreact/build/static'),
-os.path.join(BASE_DIR, 'newreact/public')] # FOR REACT STATICFILES
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'static'), os.path.join(BASE_DIR,'newreact/build/static'),]
 
 REACT_PUBLIC_DIR = os.path.join(BASE_DIR, 'newreact/public')
 

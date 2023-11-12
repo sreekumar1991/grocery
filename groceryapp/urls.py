@@ -14,6 +14,6 @@ urlpatterns = [
     path('gallery/', views.gallery, name='gallery'),
     path('shopdetails/', views.shopdetails, name='shopdetails'),
     path('wishlist/', views.wishlist, name='wishlist'),
-
+    path('our-location/', views.Location, name='our-locaion')
 
 ]

@@ -29,3 +29,6 @@ def shopdetails(request):
 
 def wishlist(request):
     return render(request,'wishlist.html')
+
+def Location(request):
+    return render(request,'our-location.html')

@@ -1,0 +1,339 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+      <title>Our-Location</title>
+      <link rel="stylesheet" type="text/css" href="{% static 'css/Styles1.css' %}"/> 
+    </head>
+    <body>
+      <div id="body">
+        <div id="headingscontainer">
+          <h1 id="Heading">AURA</h1>
+          <div id="Topmenu">
+            <div id="menucontainer1">
+              <p id="opts">Trophies & Awards</p>
+              <select id="opts"></select>
+            </div>
+            <div id="menucontainer2">
+              <p id="opts">Plaques & Certificate</p>
+              <select id="opts"></select>
+            </div>
+            <div id="menucontainer3">
+              <p id="opts">Bespoke</p>
+              <select id="opts"></select>
+            </div>
+            <div id="menucontainer4">
+              <p id="opts">Medals</p>
+              <select id="opts"></select>
+            </div>
+            <div id="menucontainer5">
+              <p id="opts">Badges</p>
+              <select id="opts"></select>
+            </div>
+            <div id="menucontainer5">
+              <p id="opts">Mementos</p>
+            </div>
+          </div>
+        </div>
+        <div id="pagediv">
+          <div class="pagination">
+            <span class="indicator active"></span>
+            <span class="indicator" onclick="changeColor()"></span>
+            <span class="indicator" onclick="changeColor()"></span>
+          </div>
+
+          <div id="mainconentcontainer">
+            <div id="contentdiv1">
+              <div id="headingofconent">
+                <h1 id="tittle">CRAFTING THE EXTRAORDINARY</h1>
+              </div>
+              <div id="paragraph">
+                <p>
+                  Looking for a specific item or just browsing for ideas Awards
+                  & More is your one-stop shop for Awards & Promontional
+                  Products. Our extensive range of porducts will ensur you find
+                  something to suite your requirements.
+                </p>
+              </div>
+
+              <div id="paragraph2">
+                <p>
+                  With 1000s of selections,Awards & More offers Branded
+                  Merchendise to fulfil all of your needs.
+                </p>
+              </div>
+            </div>
+            <div id="explorebttn">
+              <p id="nextbutton" style="margin: 0">Explore Now</p>
+              <hr id="Line" />
+            </div>
+          </div>
+          <div id="imagescontainer">
+            <img id="img1" src="./3.png" alt="Trophy" />
+            <h1 id="imagetext">UNIQUE</h1>
+            <h1 id="imagetext2">DESIGNS</h1>
+          </div>
+        </div>
+
+        <div id="pagediv2">
+          <div id="divforgrid">
+            <div id="second_div">
+              <img
+                class="float"
+                id="imgcontent1"
+                src="https://creatorstrophies.com/wp-content/uploads/2023/07/Trophies-And-awards.jpg"
+              />
+              <div id="bannertext">
+                <h1>Elegant</h1>
+                <h2>Trophies & Awards</h2>
+              </div>
+            </div>
+
+            <div id="second_div">
+              <img
+                class="float"
+                id="imgcontent1"
+                src="https://creatorstrophies.com/wp-content/uploads/2023/07/Plaques-and-certificate.jpg"
+              />
+              <div id="bannertext2">
+                <h2>Plaques & Certificates</h2>
+              </div>
+            </div>
+
+            <div id="second_div" style="width: 100%">
+              <img
+                class="float"
+                id="imgcontent"
+                src="https://creatorstrophies.com/wp-content/uploads/2023/07/memento-1.jpg"
+              />
+              <img
+                class="float"
+                id="imgcontent"
+                src="https://creatorstrophies.com/wp-content/uploads/2023/07/Medals-1.jpg"
+              />
+              <div id="bannertext3">
+                <h2>Mementos</h2>
+              </div>
+
+              <div id="bannertext4">
+                <h1>Medals</h1>
+              </div>
+            </div>
+
+            <div id="second_div" style="width: 100%">
+              <img
+                class="float"
+                id="imgcontent"
+                src="https://creatorstrophies.com/wp-content/uploads/2023/07/badge.jpg"
+              />
+              <img
+                class="float"
+                id="imgcontent"
+                src="https://creatorstrophies.com/wp-content/uploads/2023/07/Bespoke-1.jpg"
+              />
+              <div id="bannertext5">
+                <h1>Badges</h1>
+              </div>
+
+              <div id="bannertext6">
+                <h1>Bespoke</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="pagediv3">
+          <div id="bar">
+            <div id="trendingmenu">
+              <h1 id="trends">TRENDING ITEMS</h1>
+            </div>
+
+            <div id="gendermenu">
+              <div class="genderdiv">
+                <h1 class="genders">MEN</h1>
+              </div>
+              <div class="genderdiv">
+                <h1 class="genders">LADIES</h1>
+              </div>
+              <div class="genderdiv">
+                <h1 class="genders">UNISEX</h1>
+              </div>
+            </div>
+          </div>
+
+          <div id="trophydisplay">
+            <div id="trophygrid">
+              <div class="trophyimageclass">
+                <img
+                  class="trophyshowcase"
+                  src="https://creatorstrophies.com/wp-content/uploads/2023/07/74-1-800x1029.jpg"
+                />
+                <p class="name-price">donec pede justo fingilla</p>
+                <p class="name-price">$ 145</p>
+              </div>
+              <div class="trophyimageclass">
+                <img
+                  class="trophyshowcase"
+                  src="https://creatorstrophies.com/wp-content/uploads/2023/07/74-1-800x1029.jpg"
+                />
+                <p class="name-price">donec pede justo fingilla</p>
+                <p class="name-price">$ 145</p>
+              </div>
+              <div class="trophyimageclass">
+                <img
+                  class="trophyshowcase"
+                  src="https://creatorstrophies.com/wp-content/uploads/2023/07/74-1-800x1029.jpg"
+                />
+                <p class="name-price">donec pede justo fingilla</p>
+                <p class="name-price">$ 145</p>
+              </div>
+              <div class="trophyimageclass">
+                <img
+                  class="trophyshowcase"
+                  src="https://creatorstrophies.com/wp-content/uploads/2023/07/74-1-800x1029.jpg"
+                />
+                <p class="name-price">donec pede justo fingilla</p>
+                <p class="name-price">$ 145</p>
+              </div>
+              <div class="trophyimageclass">
+                <img
+                  class="trophyshowcase"
+                  src="https://creatorstrophies.com/wp-content/uploads/2023/07/74-1-800x1029.jpg"
+                />
+                <p class="name-price">donec pede justo fingilla</p>
+                <p class="name-price">$ 145</p>
+              </div>
+              <div class="trophyimageclass">
+                <img
+                  class="trophyshowcase"
+                  src="https://creatorstrophies.com/wp-content/uploads/2023/07/74-1-800x1029.jpg"
+                />
+                <p class="name-price">donec pede justo fingilla</p>
+                <p class="name-price">$ 145</p>
+              </div>
+              <div class="trophyimageclass">
+                <img
+                  class="trophyshowcase"
+                  src="https://creatorstrophies.com/wp-content/uploads/2023/07/74-1-800x1029.jpg"
+                />
+                <p class="name-price">donec pede justo fingilla</p>
+                <p class="name-price">$ 145</p>
+              </div>
+              <div class="trophyimageclass">
+                <img
+                  class="trophyshowcase"
+                  src="https://creatorstrophies.com/wp-content/uploads/2023/07/74-1-800x1029.jpg"
+                />
+                <p class="name-price">donec pede justo fingilla</p>
+                <p class="name-price">$ 145</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="page4">
+          <div id="cont1">
+            <div id="main1">
+              <div id="co1">
+                <div id="headingofconent2">
+                  <h1 id="tittleof">CREATE YOUR OWN CUSTOM AWARD</h1>
+                </div>
+                <div id="paragraphx">
+                  <p id="ptag">a small selection of our newest creations.</p>
+                </div>
+
+                <div id="paragraphx">
+                  <p id="ptag2">
+                    our capabilities include the ability to fully-custom,
+                    speciality-cut acrylic awards.imagine your logo,or almost
+                    any other shape rendered in stunning perfectly clear optic
+                    crystal.custom-cut awards are perfect way to really "wow"
+                    your recipients and team memebers. Tell us about your vision
+                    bringing your ideas to life is our passion.
+                  </p>
+                </div>
+                <div id="explorebttn2">
+                  <p id="nextbutton2" style="margin: 0">VIEW MORE DETAILS</p>
+                  <hr id="Line2" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="cont2">
+            <img
+              id="trophyx"
+              src="https://creatorstrophies.com/wp-content/uploads/2023/07/monthly-best-choice.png"
+            />
+          </div>
+        </div>
+        <div id="page5">
+          <div id="last3images">
+            <img
+              src="https://creatorstrophies.com/wp-content/uploads/2023/07/Sports-Tropy_banner.jpg"
+              alt=""
+            />
+            <img
+              src="https://creatorstrophies.com/wp-content/uploads/2023/07/Corpotate-award.jpg"
+              alt=""
+            />
+            <img
+              src="https://creatorstrophies.com/wp-content/uploads/2023/07/Authentic_banner.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div id="bottompage">
+          <div id="bottomoptions">
+            <div id="AURA">
+              <h1 class="bottomgheading">AURA</h1>
+              <p class="address-details">
+                With 1000s of selections,Awards & More offers Branded
+                Merchendise to fulfil all of your needs.
+              </p>
+              <p class="address-details">
+                Service Area: Mumbai,Chennai,Banglore,New Delhi, United Kingdom
+              </p>
+              <p class="address-details">
+                418/02,Bata house,Sector 17 Opposite MDI,Gurugram,Haryana,India
+              </p>
+              <p class="address-details">in-costomer.service@bata.com</p>
+            </div>
+
+            <div id="products">
+              <h1 class="bottomgheading">PRODUCTS</h1>
+              <p class="address-details">Trophies & Awards</p>
+              <p class="address-details">Plaques & Certificate</p>
+              <p class="address-details">Bespoke</p>
+              <p class="address-details">Medals</p>
+              <p class="address-details">Badges</p>
+              <p class="address-details">Mementos</p>
+            </div>
+
+            <div id="quicklinks">
+              <h1 class="bottomgheading">QUICK LINKS</h1>
+              <p class="address-details">Home</p>
+              <p class="address-details">About us</p>
+              <p class="address-details">Services</p>
+              <p class="address-details">Contact us</p>
+              <p class="address-details">Privacy</p>
+            </div>
+
+            <div id="followus">
+              <h1 class="bottomgheading">FOLLOW US</h1>
+              <p class="address-details">Facebook</p>
+              <p class="address-details">Twitter</p>
+              <p class="address-details">Instagram</p>
+              <p class="address-details">Reddit</p>
+            </div>
+          </div>
+
+          <div id="bottombar"></div>
+        </div>
+      </div>
+    </body>
+  </html>
+</html>
