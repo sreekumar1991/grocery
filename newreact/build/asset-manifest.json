@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.428213c3.css",
+    "main.js": "/static/js/main.ffef8ecd.js",
+    "static/js/787.5639fac3.chunk.js": "/static/js/787.5639fac3.chunk.js",
+    "static/media/Poppins-Regular.ttf": "/static/media/Poppins-Regular.4211496d0e075ffe7c2f.ttf",
+    "static/media/padlock.png": "/static/media/padlock.7829f5018925556d4e07.png",
+    "static/media/account2.png": "/static/media/account2.849bd580982c941f16ea.png",
+    "static/media/location.png": "/static/media/location.c034932c34ecc79ca982.png",
+    "static/media/presents.png": "/static/media/presents.b89a1ca5fd94f1153e62.png",
+    "static/media/adv.png": "/static/media/adv.c8f75897d8bf0d068e98.png",
+    "static/media/credit-card.png": "/static/media/credit-card.a03cda5e953c9f5bf4f4.png",
+    "static/media/boutique.png": "/static/media/boutique.025d335dcea0628c2311.png",
+    "static/media/jewelry1.png": "/static/media/jewelry1.f113593d6f216fc08268.png",
+    "static/media/paypal.png": "/static/media/paypal.2127d574ac769c2b2562.png",
+    "static/media/shopping1.png": "/static/media/shopping1.7283ab7137d77cdba854.png",
+    "static/media/order.png": "/static/media/order.d34ef92a6a750206721a.png",
+    "static/media/amazon-pay.png": "/static/media/amazon-pay.ec4a8f0956e4d39e7605.png",
+    "index.html": "/index.html",
+    "main.428213c3.css.map": "/static/css/main.428213c3.css.map",
+    "main.ffef8ecd.js.map": "/static/js/main.ffef8ecd.js.map",
+    "787.5639fac3.chunk.js.map": "/static/js/787.5639fac3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.428213c3.css",
+    "static/js/main.ffef8ecd.js"
+  ]
+}
