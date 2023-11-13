@@ -1,25 +1,25 @@
 @font-face {
   font-family: "GLSNECB";
-  src: url("./GILB____.TTF") format("truetype");
+  src: url("./font-family/GILB____.TTF") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("./Montserrat-Medium.otf") format("opentype");
+  src: url("/Montserrat-Medium.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat2";
-  src: url("./Montserrat-Light.otf") format("opentype");
+  src: url("/Montserrat-Light.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Montserrat_black";
-  src: url("./Montserrat-Black.otf") format("opentype");
+  src: url("/Montserrat-Black.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
