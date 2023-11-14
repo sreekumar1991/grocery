@@ -32,3 +32,6 @@ def wishlist(request):
 
 def Location(request):
     return render(request,'our-location.html')
+
+def Signin(request):
+    return render(request,'Sign-in.html')
