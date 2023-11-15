@@ -25,7 +25,7 @@ def gallery(request):
     return render(request,'gallery.html')
 
 def shopdetails(request):
-    return render(request,'shop-detail.htm')
+    return render(request,'shop-detail.html')
 
 def wishlist(request):
     return render(request,'wishlist.html')
