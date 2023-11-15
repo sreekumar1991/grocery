@@ -30,6 +30,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
+    <script src="{% static 'js/Login.js' %}"></script>
+    
     <!--[if lt IE 9]>
       <script src="{% static 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js' %}"></script>
       <script src="{% static 'https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js' %}"></script>
@@ -63,7 +65,12 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 					<div class="login-box">
-                       <h3><a style="color: white" href="{% url 'sign-in' %}">Sign In </a></h3>
+                        <div id="testdiv"><p id="test">Sign in / Sign Up</p>
+                            <div class="div">
+                               <div id="login">Login</div>
+                               <div id="Register">Register</div>
+                            </div>
+                           </div>
 					</div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
