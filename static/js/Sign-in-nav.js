@@ -14,4 +14,22 @@
 
 //   const login = document.querySelectorAll("#login");
 //   console.log(login[0]);
+
+  
 // });
+
+
+function validateForm() {
+    const inputValue1 = document.querySelectorAll("#myInput1")[0].value;
+    const inputValue2 = document.querySelectorAll("#myInput2")[0].value;
+
+    // If everything is okay, return true; otherwise, return false;
+    if (inputValue1 && inputValue1) {
+        console.log(inputValue1)
+        console.log(inputValue2)
+        return true;  // Form submission will proceed
+        
+    } else {
+        return false;  // Form submission will be canceled
+    }
+}

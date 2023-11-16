@@ -11,14 +11,16 @@
             <div id="menu">
                 <div id="signin-part">
                     <h3 id="label">Sign In</h3>
-                    <form id="two-inputs" action="javascript:void(0);">
+                    <form onsubmit="return validateForm();" id="two-inputs" action="javascript:void(0);">
                         <input
+                            id="myInput1"
                             class="two-inputs"
                             required
                             placeholder="Name"
                             type="text"
                         >
                         <input
+                            id="myInput2"
                             class="two-inputs"
                             required
                             placeholder="Password"
