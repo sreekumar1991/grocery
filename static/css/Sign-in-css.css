@@ -127,6 +127,14 @@
     width: 100%;
     height: 100%;
   }
+  .tittle {
+    margin-top: 325px !important;
+    width: 80% !important;
+    height: 1% !important;
+  }
+  #ICON {
+    width: 55% !important;
+  }
 }
 
 @media (max-width: 1617px) {
