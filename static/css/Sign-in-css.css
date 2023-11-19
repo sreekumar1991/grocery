@@ -99,6 +99,7 @@
 
 #label {
   font-family: "Courier New", Courier, monospace;
+  user-select: none;
 }
 
 #ICON {
