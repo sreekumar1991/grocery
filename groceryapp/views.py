@@ -35,3 +35,6 @@ def Location(request):
 
 def Signin(request):
     return render(request,'Sign-in.html')
+
+def Register(request):
+    return render(request,'register.html')

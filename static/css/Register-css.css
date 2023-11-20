@@ -17,34 +17,32 @@
   display: flex;
   width: 65%;
   height: 80%;
-  background-color: #f3edbc;
+  background-color: #8785a2;
   border-radius: 50px;
   overflow: hidden;
-  align-items: center;
   position: absolute;
 }
 
 #menu2 {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 78%;
   height: 118%;
-  background-color: #8785a2;
+  background-color: #f3edbc;
   position: absolute;
-  left: 55%;
+  left: 46%;
   bottom: -8%;
-  border-top-left-radius: 100px;
-  transform: rotate(-27deg);
+  border-bottom-left-radius: 100px;
+  transform: rotate(27deg);
 }
 
 .tittle {
   display: flex;
   flex-direction: column;
-  margin-top: 130px;
-  width: 80%;
+  width: 40%;
   height: 50%;
   align-items: center;
-  transform: rotate(27deg);
+  margin-top: 100px;
 }
 
 .descript {
@@ -54,7 +52,7 @@
   margin: 0;
 }
 #message2 {
-  margin-top: 80px;
+  margin-top: 60px;
   margin-right: 5%;
 }
 #message3 {
@@ -64,17 +62,21 @@
 #signin-part {
   display: flex;
   align-items: center;
+  margin-top: 170px;
+  margin-left: 44px;
   justify-content: center;
   flex-direction: column;
-  width: 50%;
+  width: 60%;
   height: 500px;
+  transform: rotate(-27deg);
 }
+
 #two-inputs {
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 30px;
-  margin-top: 60px;
+  margin-top: 20px;
   width: 100%;
 }
 
@@ -94,7 +96,7 @@
   background-color: #8785a2;
   border: 0;
   color: white;
-  margin-top: 70px;
+  margin-top: 40px;
 }
 
 #label {
@@ -108,6 +110,7 @@
   height: 425px;
 }
 
+/* 
 @media (max-width: 576px) {
   #menu {
     width: 100%;
@@ -194,4 +197,4 @@
 }
 
 @media (max-width: 1282px) {
-}
+} */

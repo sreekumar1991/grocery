@@ -40,6 +40,13 @@
   transform: translateY(0%);
   transition-delay: 0s, 0s, 0.3s;
 }
+#test {
+  user-select: none;
+}
+
+#test:hover {
+  color:#b0b435;
+}
 
 #login {
   display: flex;
@@ -48,6 +55,7 @@
   color: black;
   font-family: "Poppins";
   border-radius: 10px;
+  user-select: none;
 }
 
 #Register {
@@ -57,6 +65,7 @@
   color: black;
   font-family: "Poppins";
   border-radius: 10px;
+  user-select: none;
 }
 
 #login:hover {

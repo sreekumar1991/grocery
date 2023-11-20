@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign-In</title>
+        <link rel="stylesheet" href="{% static 'css/Register-css.css' %}">
+        <script src="{% static 'js/Register.js' %}"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body id="Body">
+        <div id="contain">
+            <div id="menu">
+                <div class="tittle">
+                    <p class="descript">freshshop by Liju & Sreekumar</p>
+                    <h1 class="descript" id="message2">We're so glad to have you on board!</h1>
+                    <h5 class="descript" id="message3">join us and connect with us andour technology</h5>
+                    <img id="ICON" src="{% static 'images/People2.png' %}" alt="img">
+                </div>
+                <div id="menu2">
+                    <div id="signin-part">
+                        <h3 id="label">Sign Up</h3>
+                        <form onsubmit="return validateForm();" id="two-inputs" action="javascript:void(0);">
+                            <input
+                                id="myInput1"
+                                class="two-inputs"
+                                required
+                                placeholder="Name"
+                                type="text"
+                            >
+                            <input
+                                id="myInput2"
+                                class="two-inputs"
+                                required
+                                placeholder="Email"
+                                type="text"
+                            >
+                            <input
+                                id="myInput2"
+                                class="two-inputs"
+                                required
+                                placeholder="PAN"
+                                type="text"
+                            >
+                            <input
+                                id="myInput2"
+                                class="two-inputs"
+                                required
+                                placeholder="Credit-card"
+                                type="number"
+                            >
+                            <input
+                                id="myInput2"
+                                class="two-inputs"
+                                required
+                                placeholder="Password"
+                                type="password"
+                            >
+                            <input
+                                id="myInput2"
+                                class="two-inputs"
+                                required
+                                placeholder="re-enter password"
+                                type="password"
+                            >
+                            <input id="submit" type="submit" value="Register">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -15,7 +15,8 @@ urlpatterns = [
     path('shopdetails/', views.shopdetails, name='shopdetails'),
     path('wishlist/', views.wishlist, name='wishlist'),
     path('our-location/', views.Location, name='our-locaion'),
-    path('sign-in/', views.Signin, name='sign-in')
+    path('sign-in/', views.Signin, name='sign-in'),
+    path('register/', views.Register, name='register')
 
 
 ]
