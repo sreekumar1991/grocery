@@ -25,7 +25,14 @@
                                 id="myInput1"
                                 class="two-inputs"
                                 required
-                                placeholder="Name"
+                                placeholder="First Name"
+                                type="text"
+                            >
+                            <input
+                                id="myInput1"
+                                class="two-inputs"
+                                required
+                                placeholder="Last Name"
                                 type="text"
                             >
                             <input
@@ -43,11 +50,13 @@
                                 type="text"
                             >
                             <input
-                                id="myInput2"
+                                id="creditCardNumber"
                                 class="two-inputs"
                                 required
-                                placeholder="Credit-card"
-                                type="number"
+                                inputmode="numeric"
+                                placeholder="Enter credit card number"
+                                type="text"
+                                oninput="validateCreditCardInput()"
                             >
                             <input
                                 id="myInput2"
