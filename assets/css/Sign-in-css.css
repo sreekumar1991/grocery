@@ -7,9 +7,9 @@
 
 #contain {
   display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
-  justify-content: center;
   align-items: center;
 }
 
@@ -18,6 +18,7 @@
   width: 65%;
   height: 80%;
   background-color: #f3edbc;
+  margin-top: 51px;
   border-radius: 50px;
   overflow: hidden;
   align-items: center;
@@ -108,6 +109,16 @@
   height: 425px;
 }
 
+#titlebar {
+  width: 100%;
+  height: 50px;
+}
+#logox {
+  object-fit: contain;
+  width: 100px;
+  height: 50px;
+}
+
 @media (max-width: 576px) {
   #menu {
     width: 100%;
@@ -120,6 +131,12 @@
   }
   #submit {
     width: 50%;
+  }
+  #titlebar {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
   }
 }
 

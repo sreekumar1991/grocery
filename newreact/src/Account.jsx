@@ -8,20 +8,28 @@ import {
   DialogActions,
 } from "@material-ui/core";
 
-import logout from "./Logout.png";
-import User from "./user 1.png";
-import order from "./order.png";
-import Security from "./padlock.png";
-import Address from "./location.png";
-import Payment from "./credit-card.png";
-import Paypal from "./paypal.png";
-import Amazone from "./amazon-pay.png";
-import gold from "./jewelry1.png";
-import craft from "./adv.png";
-import Boutique from "./boutique.png";
-import gift from "./presents.png";
-import acc from "./account2.png";
-import shop from "./shopping1.png";
+import logout from "./Public/Logout.png";
+// import User from "./user 1.png";
+
+import order from "./Public/order.png";
+import Security from "./Public/padlock.png";
+import Address from "./Public/location.png";
+import Payment from "./Public/credit-card.png";
+import Paypal from "./Public/paypal.png";
+import Amazone from "./Public/amazon-pay.png";
+
+import Fashion from "./Public/fashion.jpg";
+import Handloom from "./Public/Handloom.jpg";
+import other_account from "./Public/Other-acc.jpg";
+import shop from "./Public/Shop.jpg";
+import gift from "./Public/Gift.jpg";
+import Jewelry from "./Public/Jewelry.jpg";
+
+// import Test from "./Test.jsx";
+
+import Appbar from "./Appbar.jsx";
+import Card from "./Card.jsx";
+import Grid from "./Grid.jsx";
 
 export default function Account() {
   const [popupstate, setpopstate] = useState(false);
@@ -30,11 +38,10 @@ export default function Account() {
     handleclose();
   };
 
-  const handlelogout = () => {
-
-    setpopstate(true);
-    console.log(popupstate);
-  };
+  // const handlelogout = () => {
+  //   setpopstate(true);
+  //   console.log(popupstate);
+  // };
 
   const handleclose = () => {
     alert("HIII");
@@ -79,7 +86,57 @@ export default function Account() {
         </div>
       </div>
       <div id="container1">
-        <div className="containertask">
+        {/* <Test /> */}
+        <Appbar />
+
+        {<Grid
+            Item={
+              <Card
+                image={Jewelry}
+                Tittle={"Gold & Diamond Jewellery"}
+                Description={"Apps and more, Content and devices, Music settings"}
+              />
+            }
+            Item2={
+              <Card
+                image={Handloom}
+                Tittle={"Handloom & Handicraft Store"}
+                Description={"Advertising preferences, Communication preferences, SMS alert preferences, Message center"}
+              />
+            }
+            Item3={
+              <Card
+                image={Fashion}
+                Tittle={"The Designer Boutique"}
+                Description={"Amazon Pay, Bank accounts for refunds, Coupons"}
+              />
+            }
+      
+            Item4={
+              <Card
+                image={gift}
+                Tittle={"Gift Boxes, Gift Tags, Greeting Cards"}
+                Description={"Leave delivery feedback, Lists, Photo Id proofs, Profile "}
+              />
+            }
+            Item5={
+              <Card
+                image={other_account}
+                Tittle={"Other accounts"}
+                Description={"Amazon Business registration, seller account, Amazzone Web Services, Login With Amazon "}
+              />
+            }
+            Item6={
+              <Card
+                image={shop}
+                Tittle={"Shopping programs and rentals"}
+                Description={"Subscribe & Save"}
+              />
+            }
+          />
+        }
+
+        {/* <div className="containertask">
           <div id="todocontain">
             <Typography id="Tittle">My Account </Typography>
           </div>
@@ -91,75 +148,7 @@ export default function Account() {
               alt="img2"
             ></img>
           </div>
-        </div>
-
-        <div id="menu">
-          <div id="allmenucontainer">
-            <div id="menuoptions">
-              <img src={gold} id="optionicon2" alt="img"></img>
-              <div className="descript1">
-                <Typography id="description">
-                  Gold & Diamond Jewellery
-                </Typography>
-                <Typography id="description2">
-                  Apps and more Content and devices Music settings
-                </Typography>
-              </div>
-            </div>
-            <div id="menuoptions">
-              <img id="optionicon2" src={craft} alt="img"></img>
-              <div className="descript1">
-                <Typography id="description">
-                  Handloom & Handicraft Store
-                </Typography>
-                <Typography id="description2">
-                  Advertising preferences Communication preferences SMS alert
-                  preferences Message center
-                </Typography>
-              </div>
-            </div>
-            <div id="menuoptions">
-              <img id="optionicon2" src={Boutique} alt="img"></img>
-              <div className="descript1">
-                <Typography id="description">The Designer Boutique</Typography>
-                <Typography id="description2">
-                  Amazon Pay Bank accounts for refunds Coupons
-                </Typography>
-              </div>
-            </div>
-            <div id="menuoptions">
-              <img id="optionicon2" src={gift} alt="img"></img>
-              <div className="descript1">
-                <Typography id="description">
-                  Gift Boxes, Gift Tags, Greeting Cards
-                </Typography>
-                <Typography id="description2">
-                  Apps and more Content and devices Music settings
-                </Typography>
-              </div>
-            </div>
-            <div id="menuoptions">
-              <img id="optionicon2" src={acc} alt="img"></img>
-              <div className="descript1">
-                <Typography id="description">Other accounts</Typography>
-                <Typography id="description2">
-                  Apps and more Content and devices Music settings
-                </Typography>
-              </div>
-            </div>
-            <div id="menuoptions">
-              <img id="optionicon2" src={shop} alt="order"></img>
-              <div className="descript1">
-                <Typography id="description">
-                  Shopping programs and rentals
-                </Typography>
-                <Typography id="description2">
-                  Apps and more Content and devices Music settings
-                </Typography>
-              </div>
-            </div>
-          </div>
-        </div>
+        </div>  */}
 
         <Dialog
           open={popupstate}
