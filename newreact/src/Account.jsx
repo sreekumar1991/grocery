@@ -1,14 +1,14 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
-import { useState } from "react";
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-} from "@material-ui/core";
+// import { useState } from "react";
+// import {
+//   Dialog,
+//   DialogTitle,
+//   DialogContent,
+//   DialogActions,
+// } from "@material-ui/core";
 
-import logout from "./Public/Logout.png";
+// import logout from "./Public/Logout.png";
 // import User from "./user 1.png";
 
 import order from "./Public/order.png";
@@ -32,21 +32,21 @@ import Card from "./Card.jsx";
 import Grid from "./Grid.jsx";
 
 export default function Account() {
-  const [popupstate, setpopstate] = useState(false);
+  // const [popupstate, setpopstate] = useState(false);
 
-  const Logout = () => {
-    handleclose();
-  };
+  // const Logout = () => {
+  //   handleclose();
+  // };
 
   // const handlelogout = () => {
   //   setpopstate(true);
   //   console.log(popupstate);
   // };
 
-  const handleclose = () => {
-    alert("HIII");
-    setpopstate(false);
-  };
+  // const handleclose = () => {
+  //   alert("HIII");
+  //   setpopstate(false);
+  // };
 
   const click = () => {
     alert("clicked");
@@ -89,7 +89,7 @@ export default function Account() {
         {/* <Test /> */}
         <Appbar />
 
-        {<Grid
+        {<Grid id="Grid"
             Item={
               <Card
                 image={Jewelry}
@@ -136,40 +136,6 @@ export default function Account() {
           />
         }
 
-        {/* <div className="containertask">
-          <div id="todocontain">
-            <Typography id="Tittle">My Account </Typography>
-          </div>
-          <div id="logoutdiv">
-            <img
-              id="IconProfile"
-              onClick={handlelogout}
-              src={User}
-              alt="img2"
-            ></img>
-          </div>
-        </div>  */}
-
-        <Dialog
-          open={popupstate}
-          onClose={handleclose}
-          PaperProps={{ id: "hiddendivcontainer" }}
-        >
-          <DialogContent id="Dialogger">
-            <DialogTitle id="ProfileDialog">
-              <Typography className="Typographyusername">user</Typography>{" "}
-              <hr id="Line"></hr>
-              <DialogActions id="ProfileDialogActions">
-                <img
-                  id="Logoutpng"
-                  src={logout}
-                  onClick={Logout}
-                  alt="logout"
-                />
-              </DialogActions>
-            </DialogTitle>
-          </DialogContent>
-        </Dialog>
       </div>
     </div>
   );

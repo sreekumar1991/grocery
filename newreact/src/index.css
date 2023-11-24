@@ -26,58 +26,6 @@ code {
   font-style: normal;
 }
 
-.containertask {
-  display: flex;
-  max-width: 100vw;
-  width: 100%;
-  height: 70px;
-  box-sizing: border-box;
-  align-items: center;
-  gap: 44.11%;
-  background: #ffffff;
-  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
-}
-#todocontain {
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  padding-left: 14.3%;
-}
-#Title2 {
-  height: 53px;
-  width: 170px;
-  object-fit: contain;
-}
-
-#logoutdiv {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 30%;
-}
-#IconProfile {
-  width: 42px;
-  height: 42px;
-  cursor: pointer;
-  user-select: none;
-}
-
-#Logoutpng {
-  width: 52px;
-  height: 17px;
-  user-select: none;
-  cursor: pointer;
-}
-
-#ProfileDialogActions {
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 0;
-}
-#Dialogger {
-  padding: 0;
-}
-
 /* REMOVE THIS FEATURE AND ADD NEW */
 #Sidebar {
   display: none;
@@ -104,13 +52,6 @@ code {
   margin-left: 14%;
   margin-top: 30px;
   cursor: pointer;
-}
-
-#Tittle {
-  color: black;
-  font-family: "Poppins";
-  font-size: larger;
-  font-weight: 600;
 }
 
 #options2 {
@@ -145,72 +86,9 @@ code {
   height: 30px;
 }
 
-#menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  width: 85%;
-  margin-top: 20px;
-  margin-left: 40px;
-  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
-}
-
-#menuoptions {
-  display: flex;
-  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  height: 80px;
-  width: 95%;
-}
-
-#allmenucontainer {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  width: 97%;
-  margin-top: 20px;
-  padding-bottom: 20px;
-}
-
-#optionicon2 {
-  object-fit: contain;
-  width: 80px;
-  height: 80px;
-}
-
-.descript1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-#description {
-  font-family: "Poppins";
-  font-size: 15px;
-}
 #description2 {
   font-family: "Poppins";
   font-size: 15px;
-}
-
-#root {
-  display: flex;
-}
-
-#test {
-  background-color: black;
-  width: 85%;
-  margin-top: 40px;
-  margin-left: 40px;
-  height: 80%;
-}
-
-#cards {
-  display: flex;
-  background-color: aquamarine;
 }
 
 @media (max-width: 1600px) {
