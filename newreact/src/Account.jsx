@@ -28,6 +28,7 @@ import Jewelry from "./Public/Jewelry.jpg";
 // import Test from "./Test.jsx";
 
 import Appbar from "./Appbar.jsx";
+
 import Card from "./Card.jsx";
 import Grid from "./Grid.jsx";
 
@@ -86,7 +87,6 @@ export default function Account() {
         </div>
       </div>
       <div id="container1">
-        {/* <Test /> */}
         <Appbar />
 
         {<Grid id="Grid"
