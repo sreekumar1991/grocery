@@ -560,9 +560,6 @@
   background-color: black;
   margin-top: 2px;
 }
-/* #ptag2 {
-  margin-block: unset;
-} */
 
 #page5 {
   display: flex;
@@ -669,15 +666,6 @@
   border-style: none none solid none;
 }
 
-/* 
-.invisiblediv{
-display: flex;
-max-width:300px;
-width: 100%;
-height: 300px;
-background-color: #ddd;
-z-index: 1;
-} */
 
 @media (max-width: 1600px) {
   /* Styles for screens up to 1600px wide */

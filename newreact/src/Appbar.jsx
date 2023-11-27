@@ -12,16 +12,17 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+// import { useEffect } from "react";
 
 import Icon from "./Public/PngItem_5087362.png";
 
 const pages = [
-  "your Orders",
+  "your orders",
   "Login & security",
   "Your Addresses",
   "Payment options",
   "PayPal",
-  "Amazon Pay balance",
+  "Amazon pay balance",
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -45,16 +46,26 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  // useEffect(() => {
+  //   const Home = document.querySelectorAll("#test");
+      
+  //    console.log(Home)
+  //    Home[0].addEventListener("click", () => {
+  //     window.location.href = "http://127.0.0.1:8000/";
+  //   });
+    
+  // });
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
+          <Typography id="test"
             variant="h6"
             noWrap
             component="a"
-            href="#"
+            href="http://127.0.0.1:8000/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -109,7 +120,7 @@ function ResponsiveAppBar() {
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="http://127.0.0.1:8000/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
