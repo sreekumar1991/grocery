@@ -46,8 +46,9 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+
   // useEffect(() => {
-  //   const Home = document.querySelectorAll("#test");
+  //   const Home = document.getElementById("#test");
       
   //    console.log(Home)
   //    Home[0].addEventListener("click", () => {
@@ -56,6 +57,7 @@ function ResponsiveAppBar() {
     
   // });
 
+  
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
