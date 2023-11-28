@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 // import { useEffect } from "react";
+import axios from "axios";
 
 import Icon from "./Public/PngItem_5087362.png";
 
@@ -45,6 +46,9 @@ function ResponsiveAppBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+
+  axios.get(`http://127.0.0.1:8000/`).then((response) => {}).catch((error) => {console.error("Error fetching data:", error);});
 
 
   // useEffect(() => {
