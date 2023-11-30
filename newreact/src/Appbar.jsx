@@ -12,8 +12,8 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-// import { useEffect } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+// import axios from "axios";
 
 import Icon from "./Public/PngItem_5087362.png";
 
@@ -47,31 +47,37 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  // const test = () => {
+  //   axios
+  //     .get(`http://127.0.0.1:8000/`)
+  //     .then((response) => {})
+  //     .catch((error) => {
+  //       console.error("Error fetching data:", error);
+  //     });
+  //     console.log("1")
+  // };
 
-  axios.get(`http://127.0.0.1:8000/`).then((response) => {}).catch((error) => {console.error("Error fetching data:", error);});
 
+  useEffect(() => {
+    const Home = document.getElementById("#test");
+     console.log(Home)
+     Home[0].addEventListener("click", () => {
+      window.location.href = "http://127.0.0.1:8000/";
+    });
 
-  // useEffect(() => {
-  //   const Home = document.getElementById("#test");
-      
-  //    console.log(Home)
-  //    Home[0].addEventListener("click", () => {
-  //     window.location.href = "http://127.0.0.1:8000/";
-  //   });
-    
-  // });
+  });
 
-  
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography id="test"
+          <Typography
+           id="test"
             variant="h6"
             noWrap
             component="a"
-            href="http://127.0.0.1:8000/"
+            // href="http://127.0.0.1:8000/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -80,6 +86,8 @@ function ResponsiveAppBar() {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              userSelect: "none",
+              cursor: "pointer",
             }}
           >
             HOME
@@ -123,10 +131,11 @@ function ResponsiveAppBar() {
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
+            onClick={test}
             variant="h5"
             noWrap
             component="a"
-            href="http://127.0.0.1:8000/"
+            // href="http://127.0.0.1:8000/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -136,6 +145,8 @@ function ResponsiveAppBar() {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              userSelect: "none",
+              cursor: "pointer",
             }}
           >
             HOME
@@ -155,7 +166,8 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src={Icon} />  {/*icon for user account */}
+                <Avatar alt="Remy Sharp" src={Icon} />{" "}
+                {/*icon for user account */}
               </IconButton>
             </Tooltip>
             <Menu
