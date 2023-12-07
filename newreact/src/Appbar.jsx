@@ -13,7 +13,8 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { useEffect } from "react";
-// import axios from "axios";
+import { useState } from "react";
+import axios from "axios";
 
 import Icon from "./Public/PngItem_5087362.png";
 
@@ -28,6 +29,10 @@ const pages = [
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
+  // const [data, setData] = useState(null);
+
+  const [data2, setData2] = useState(null);
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -47,25 +52,21 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
-  // const test = () => {
-  //   axios
-  //     .get(`http://127.0.0.1:8000/`)
-  //     .then((response) => {})
-  //     .catch((error) => {
-  //       console.error("Error fetching data:", error);
-  //     });
-  //     console.log("1")
-  // };
-
-
   useEffect(() => {
-    const Home = document.getElementById("#test");
-     console.log(Home)
-     Home[0].addEventListener("click", () => {
-      window.location.href = "http://127.0.0.1:8000/";
-    });
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/");
+        // setData(response.data);
+        setData2(response.request.responseURL);
+      } catch (error) {
+        console.error("Error fetching data from Django API", error);
+      }
+    };
+    fetchData();
+  }, []);
 
-  });
+  // console.log("TEST2", data);
+  // console.log("TEST", data2);
 
   return (
     <AppBar position="static">
@@ -73,11 +74,11 @@ function ResponsiveAppBar() {
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
-           id="test"
+            id="test"
             variant="h6"
             noWrap
             component="a"
-            // href="http://127.0.0.1:8000/"
+            href={data2}
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -131,11 +132,10 @@ function ResponsiveAppBar() {
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
-            onClick={test}
             variant="h5"
             noWrap
             component="a"
-            // href="http://127.0.0.1:8000/"
+            href={data2}
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
