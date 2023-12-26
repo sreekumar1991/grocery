@@ -66,14 +66,19 @@ function ResponsiveAppBar() {
   }, []);
 
   // console.log("TEST2", data);
-  // console.log("TEST", data2);
+  console.log("TEST", data2);
 
+  function goBack() {
+    window.history.back();
+  }
+  
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
+            onClick={goBack}
             id="test"
             variant="h6"
             noWrap
@@ -132,6 +137,7 @@ function ResponsiveAppBar() {
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
+            onClick={goBack}
             variant="h5"
             noWrap
             component="a"
