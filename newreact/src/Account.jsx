@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+// import { Typography } from "@material-ui/core";
 // import { useState } from "react";
 // import {
 //   Dialog,
@@ -11,12 +11,12 @@ import { Typography } from "@material-ui/core";
 // import logout from "./Public/Logout.png";
 // import User from "./user 1.png";
 
-import order from "./Public/order.png";
-import Security from "./Public/padlock.png";
-import Address from "./Public/location.png";
-import Payment from "./Public/credit-card.png";
-import Paypal from "./Public/paypal.png";
-import Amazone from "./Public/amazon-pay.png";
+// import order from "./Public/order.png";
+// import Security from "./Public/padlock.png";
+// import Address from "./Public/location.png";
+// import Payment from "./Public/credit-card.png";
+// import Paypal from "./Public/paypal.png";
+// import Amazone from "./Public/amazon-pay.png";
 
 import Fashion from "./Public/fashion.jpg";
 import Handloom from "./Public/Handloom.jpg";
@@ -49,13 +49,13 @@ export default function Account() {
   //   setpopstate(false);
   // };
 
-  const click = () => {
-    alert("clicked");
-  };
+  // const click = () => {
+  //   alert("clicked");
+  // };
 
   return (
     <div id="Outside_mainddiv">
-      <div id="Sidebar">
+      {/* <div id="Sidebar">
         <div className="optioncontainer" onClick={click}>
           <Typography id="options">Home</Typography>
         </div>
@@ -85,7 +85,7 @@ export default function Account() {
             <Typography id="options2">Amazon Pay balance</Typography>
           </div>
         </div>
-      </div>
+      </div> */}
       <div id="container1">
         <Appbar />
 
