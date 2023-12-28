@@ -4,7 +4,7 @@
     <head>
         <title>Sign-In</title>
         <link rel="stylesheet" href="{% static 'css/Register-css.css' %}">
-        <script src="{% static 'js/Register.js' %}"></script>
+        <script src="{% static 'js/Validate-Credit-Card.js' %}"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -25,7 +25,8 @@
                 <div id="menu2">
                     <div id="signin-part">
                         <h3 id="label">Sign Up</h3>
-                        <form onsubmit="return validateForm();" id="two-inputs" action="javascript:void(0);">
+                        <form action="/account/" id="two-inputs" method="get">
+                            {% csrf_token %}
                             <input
                                 id="myInput1"
                                 class="two-inputs"
