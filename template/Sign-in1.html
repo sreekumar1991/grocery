@@ -14,6 +14,23 @@
         <link rel="stylesheet" href="{% static 'Plugins-for-sign-in-page/slider/css/owl.carousel.min.css' %}">
         <link rel="stylesheet" href="{% static 'Plugins-for-sign-in-page/slider/css/owl.theme.default.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/Login-page/style.css' %}">
+        <script>
+            function performLogin() {
+                // Get the input values by ID
+                const usernameInput = document.getElementById('Text1');
+                const passwordInput = document.getElementById('Text2');
+    
+                // Get the values entered by the user
+                const username = usernameInput.value;
+                const password = passwordInput.value;
+    
+                // Display the values (you can do whatever you want with them)
+                console.log('Username:', username);
+                console.log('Password:', password);
+
+                // Here you can add further logic, e.g., sending the data to a server, etc.
+            }
+        </script>
     </head>
     <body class="form-login-body">
         <div class="container">
@@ -22,7 +39,7 @@
                     <div class="row">
                         <div class="col-md-7 detail-box">
                             <a href="{% url 'index' %}">
-                                <img class="logo" src="{% static 'images/Login-page/logo.png' %}" alt="">
+                                <img class="logo" src="{% static 'images/logo.png' %}" alt="">
                             </a>
                             <div class="detailsh">
                                 <img class="help" src="{% static 'images/Login-page/help.png' %}" alt="">
@@ -34,44 +51,51 @@
                             <h4>Welcome Back</h4>
                             <p>Signin to your Account</p>
                             <div class="login-det">
+                                <form action="/register/">
                                 <div class="form-row">
-                                    <label for="">Username</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="basic-addon1">
-                                                <i class="far fa-user"></i>
-                                            </span>
+                                        <label for="">Username</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                    <i class="far fa-user"></i>
+                                                </span>
+                                            </div>
+                                            <input
+                                                name=""
+                                                id="Text1"
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="Enter Username"
+                                                aria-label="Username"
+                                                aria-describedby="basic-addon1"
+                                            >
                                         </div>
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            placeholder="Enter Username"
-                                            aria-label="Username"
-                                            aria-describedby="basic-addon1"
-                                        >
                                     </div>
-                                </div>
-                                <div class="form-row">
-                                    <label for="">Password</label>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" id="basic-addon1">
-                                                <i class="fas fa-lock"></i>
-                                            </span>
+                                    <div class="form-row">
+                                        <label for="">Password</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                    <i class="fas fa-lock"></i>
+                                                </span>
+                                            </div>
+                                            <input
+                                                id="Text2"
+                                                name=""
+                                                type="password"
+                                                class="form-control"
+                                                placeholder="Enter Password"
+                                                aria-label="Username"
+                                                aria-describedby="basic-addon1"
+                                            >
                                         </div>
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            placeholder="Enter Password"
-                                            aria-label="Username"
-                                            aria-describedby="basic-addon1"
-                                        >
                                     </div>
-                                </div>
-                                <p class="forget">
-                                    <a href="">Forget Password?</a>
-                                </p>
-                                <button class="btn btn-sm btn-danger">Login</button>
+                                    <p class="forget">
+                                        <a href="">Forget Password?</a>
+                                    </p>
+                                    <button class="btn btn-sm btn-danger" onclick="performLogin()">Login</button>      <!--style needs to be changed-->
+                                </form>
+                                <!-- <button onclick="performLogin() ">click</button> -->
                                 <div class="social-link">
                                     <ul class="socil-icon">
                                         <li>
@@ -116,8 +140,8 @@
     <script src="{% static 'js/Login-page/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'js/Login-page/popper.min.js' %}"></script>
     <script src="{% static 'js/Login-page/bootstrap.min.js' %}"></script>
-    <script src="{% static 'Plugins-for-sign-in-page/jquery-scrolltofixed-min.js' %}"></script>
-    <script src="{% static 'Plugins-for-sign-in-pag/slider/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'Plugins-for-sign-in-page/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
+    <script src="{% static 'Plugins-for-sign-in-page/slider/js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/Login-page/script.js' %}"></script>
 </html>
 <!doctype html>
@@ -140,7 +164,7 @@
     <script src="{% static 'js/Login-page/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'js/Login-page/popper.min.js' %}"></script>
     <script src="{% static 'js/Login-page/bootstrap.min.js' %}"></script>
-    <script src="{% static 'Plugins-for-sign-in-page/jquery-scrolltofixed-min.js' %}"></script>
-    <script src="{% static 'Plugins-for-sign-in-pag/slider/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'Plugins-for-sign-in-page/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
+    <script src="{% static 'Plugins-for-sign-in-page/slider/js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/Login-page/script.js' %}"></script>
 </html>
