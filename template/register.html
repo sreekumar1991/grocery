@@ -28,6 +28,7 @@
                         <form action="/signup/" id="two-inputs" method="post">
                             {% csrf_token %}
                             <input
+                                name="firstname"
                                 id="myInput1"
                                 class="two-inputs"
                                 required
@@ -35,6 +36,7 @@
                                 type="text"
                             >
                             <input
+                                name="lastname"
                                 id="myInput1"
                                 class="two-inputs"
                                 required
@@ -42,6 +44,7 @@
                                 type="text"
                             >
                             <input
+                                name="email"
                                 id="myInput2"
                                 class="two-inputs"
                                 required
@@ -49,6 +52,7 @@
                                 type="text"
                             >
                             <input
+                                name="pan"
                                 id="myInput2"
                                 class="two-inputs"
                                 required
@@ -56,6 +60,7 @@
                                 type="text"
                             >
                             <input
+                                name="cc"
                                 id="creditCardNumber"
                                 class="two-inputs"
                                 required
@@ -65,6 +70,7 @@
                                 oninput="validateCreditCardInput()"
                             >
                             <input
+                                name="password1"
                                 id="myInput2"
                                 class="two-inputs"
                                 required
@@ -72,6 +78,7 @@
                                 type="password"
                             >
                             <input
+                                name="pasword2"
                                 id="myInput2"
                                 class="two-inputs"
                                 required

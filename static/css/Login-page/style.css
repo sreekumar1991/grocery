@@ -324,6 +324,14 @@ body {
     padding-left: 30px;
     padding-right: 30px;
   }
+  .form-login-body .login-desk .loginform {
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+  .form-login-body .login-desk .detail-box {
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+  }
 }
 @media screen and (max-width: 480px) {
   .form-login-body {

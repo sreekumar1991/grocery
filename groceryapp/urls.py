@@ -17,7 +17,7 @@ urlpatterns = [
     path('our-location/', views.Location, name='our-locaion'),
     path('sign-in/', views.Signin, name='sign-in'),
     path('register/', views.Register, name='register'),
-    path('signup/', views.req, name='signup'),
+    path('signup/', views.Signup, name='signup'),
 
 
 ]
