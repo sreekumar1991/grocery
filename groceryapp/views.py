@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-
+from .models import userData
 
 def index(request):
     return render(request,'index.html')
@@ -38,3 +38,8 @@ def Signin(request):
 
 def Register(request):
     return render(request,'register.html')
+
+
+def req(request):
+    data = userData.objects.all() # to fetch all the data from database
+    return render(request,'register.html',{"data":data})

@@ -92,7 +92,7 @@ WSGI_APPLICATION = "groceryproject.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "User",
+        "NAME": "Users",
         "USER": "postgres",
         "PASSWORD": "6073",
         "HOST": "localhost"
