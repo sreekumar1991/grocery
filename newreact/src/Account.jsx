@@ -1,4 +1,7 @@
 import React from "react";
+// import axios from 'axios';
+// import { useEffect, useState } from 'react';
+
 // import { Typography } from "@material-ui/core";
 // import { useState } from "react";
 // import {
@@ -33,25 +36,30 @@ import Card from "./Card.jsx";
 import Grid from "./Grid.jsx";
 
 export default function Account() {
-  // const [popupstate, setpopstate] = useState(false);
 
-  // const Logout = () => {
-  //   handleclose();
-  // };
 
-  // const handlelogout = () => {
-  //   setpopstate(true);
-  //   console.log(popupstate);
-  // };
+//   const [dataFromDjango, setDataFromDjango] = useState([]);
 
-  // const handleclose = () => {
-  //   alert("HIII");
-  //   setpopstate(false);
-  // };
+//   useEffect(() => {
+//       const fetchDataFromDjango = async () => {
+//           try {
+//               // Replace "/api/data" with the actual Django API endpoint
+//               const response = await axios.get('http://127.0.0.1:8000/signup');
+//               setDataFromDjango(response.data);
 
-  // const click = () => {
-  //   alert("clicked");
-  // };
+//               // Process the data as needed
+//               console.log('Data from Django:', response.data);
+//           } catch (error) {
+//               console.error('Error fetching data from Django:', error);
+//           }
+//       };
+
+//       fetchDataFromDjango();
+//   }, []);
+
+
+// console.log("X",dataFromDjango)
+
 
   return (
     <div id="Outside_mainddiv">
