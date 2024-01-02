@@ -1,6 +1,6 @@
 import React from "react";
-// import axios from 'axios';
-// import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 // import { Typography } from "@material-ui/core";
 // import { useState } from "react";
@@ -38,29 +38,21 @@ import Grid from "./Grid.jsx";
 export default function Account() {
 
 
-//   const [dataFromDjango, setDataFromDjango] = useState([]);
+  const [userData, setUserData] = useState([]);
 
-//   useEffect(() => {
-//       const fetchDataFromDjango = async () => {
-//           try {
-//               // Replace "/api/data" with the actual Django API endpoint
-//               const response = await axios.get('http://127.0.0.1:8000/signup');
-//               setDataFromDjango(response.data);
+    useEffect(() => {
+      // Fetch data from Django API endpoint using Axios
+      axios.get('http://127.0.0.1:8000/') // Adjust the URL based on your Django API endpoint
+          .then(response => {
+              setUserData(response.data.user_data);
+          })
+          .catch(error => {
+              console.error('Error fetching user data:', error);
+          });
+  }, []);
 
-//               // Process the data as needed
-//               console.log('Data from Django:', response.data);
-//           } catch (error) {
-//               console.error('Error fetching data from Django:', error);
-//           }
-//       };
-
-//       fetchDataFromDjango();
-//   }, []);
-
-
-// console.log("X",dataFromDjango)
-
-
+  console.log("X", userData);
+  
   return (
     <div id="Outside_mainddiv">
       {/* <div id="Sidebar">
