@@ -69,9 +69,11 @@ function ResponsiveAppBar() {
   console.log("TEST", data2);
 
   function goBack() {
-    window.history.back();
+    // window.history.back();
+    window.location.href = 'http://127.0.0.1:8000/';
   }
-  
+
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">

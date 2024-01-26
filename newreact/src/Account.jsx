@@ -1,6 +1,6 @@
 import React from "react";
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 // import { Typography } from "@material-ui/core";
 // import { useState } from "react";
@@ -36,23 +36,22 @@ import Card from "./Card.jsx";
 import Grid from "./Grid.jsx";
 
 export default function Account() {
-
-
   const [userData, setUserData] = useState([]);
 
-    useEffect(() => {
-      // Fetch data from Django API endpoint using Axios
-      axios.get('http://127.0.0.1:8000/') // Adjust the URL based on your Django API endpoint
-          .then(response => {
-              setUserData(response.data.user_data);
-          })
-          .catch(error => {
-              console.error('Error fetching user data:', error);
-          });
+  useEffect(() => {
+    // Fetch data from Django API endpoint using Axios
+    axios
+      .get("http://127.0.0.1:8000/") // Adjust the URL based on your Django API endpoint
+      .then((response) => {
+        setUserData(response.data.user_data);
+      })
+      .catch((error) => {
+        console.error("Error fetching user data:", error);
+      });
   }, []);
 
   console.log("X", userData);
-  
+
   return (
     <div id="Outside_mainddiv">
       {/* <div id="Sidebar">
@@ -89,19 +88,25 @@ export default function Account() {
       <div id="container1">
         <Appbar />
 
-        {<Grid id="Grid"
+        {
+          <Grid
+            id="Grid"
             Item={
               <Card
                 image={Jewelry}
                 Tittle={"Gold & Diamond Jewellery"}
-                Description={"Apps and more, Content and devices, Music settings"}
+                Description={
+                  "Apps and more, Content and devices, Music settings"
+                }
               />
             }
             Item2={
               <Card
                 image={Handloom}
                 Tittle={"Handloom & Handicraft Store"}
-                Description={"Advertising preferences, Communication preferences, SMS alert preferences, Message center"}
+                Description={
+                  "Advertising preferences, Communication preferences, SMS alert preferences, Message center"
+                }
               />
             }
             Item3={
@@ -111,19 +116,22 @@ export default function Account() {
                 Description={"Amazon Pay, Bank accounts for refunds, Coupons"}
               />
             }
-      
             Item4={
               <Card
                 image={gift}
                 Tittle={"Gift Boxes, Gift Tags, Greeting Cards"}
-                Description={"Leave delivery feedback, Lists, Photo Id proofs, Profile "}
+                Description={
+                  "Leave delivery feedback, Lists, Photo Id proofs, Profile "
+                }
               />
             }
             Item5={
               <Card
                 image={other_account}
                 Tittle={"Other accounts"}
-                Description={"Amazon Business registration, seller account, Amazzone Web Services, Login With Amazon "}
+                Description={
+                  "Amazon Business registration, seller account, Amazzone Web Services, Login With Amazon "
+                }
               />
             }
             Item6={
@@ -135,7 +143,6 @@ export default function Account() {
             }
           />
         }
-
       </div>
     </div>
   );

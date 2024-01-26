@@ -4,7 +4,10 @@ from .models import userData
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 from django.http import JsonResponse
-
+from django.views.generic import TemplateView
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
+import os
 
 def index(request):
     return render(request,'index.html')
@@ -64,22 +67,29 @@ def Signup(request):
         user_data = userData(FirstName=firstname, LastName=lastname, Email=email, PanCard=pancard, AdhaarCard=debitcard)
         user_data.save()
 
-        data = userData.objects.all()
-        serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'PanCard': user.PanCard, 'AdhaarCard': user.AdhaarCard} for user in data]
-        return JsonResponse({'user_data': serialized_data})
+    #     data = userData.objects.all()
+    #     serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'PanCard': user.PanCard, 'AdhaarCard': user.AdhaarCard} for user in data]
+    #     return JsonResponse({'user_data': serialized_data})
+    #     # Return data as JSON response
+
+
+    # elif request.method == 'GET':
+    #     # Handle GET requests (e.g., render the signup form)
+    #    return render(request, 'X.html', {"data": data}) # Adjust the template name as needed
+
+    # else:
+    #     # Handle other HTTP methods if needed
+    #     return HttpResponse("Method Not Allowed", status=405)
+
+
+# def getuserdata(request):
+#             data = userData.objects.all()
+#             serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'PanCard': user.PanCard, 'AdhaarCard': user.AdhaarCard} for user in data]
+#             # return JsonResponse({'user_data': serialized_data})
+#             return TemplateView.as_view(template_name=os.path.join(BASE_DIR, 'newreact/build/index.html'))(request, user_data=serialized_data)
+
+
         # Return data as JSON response
-
-
-    elif request.method == 'GET':
-        # Handle GET requests (e.g., render the signup form)
-       return render(request, 'X.html', {"data": data}) # Adjust the template name as needed
-
-    else:
-        # Handle other HTTP methods if needed
-        return HttpResponse("Method Not Allowed", status=405)
-
-
-
 # this is the code to  retrieve all the data from database 
     # data = userData.objects.all()
     # serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'PanCard': user.PanCard, 'AdhaarCard': user.AdhaarCard} for user in data]
