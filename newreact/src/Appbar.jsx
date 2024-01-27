@@ -70,7 +70,7 @@ function ResponsiveAppBar() {
 
   function goBack() {
     // window.history.back();
-    window.location.href = "https://127.0.0.1:8000/";
+    window.location.href = "/";
   }
 
   return (
