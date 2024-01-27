@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Build paths inside the project like this: BASE_DIR / 'subdir'.git
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -29,7 +29,7 @@ with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
 DEBUG = False
 ALLOWED_HOSTS = ['*']
 
-CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
+CORS_ALLOWED_ORIGINS = ["https://localhost:3000"]
    
 
 # Application definition
