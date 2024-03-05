@@ -5,6 +5,8 @@
         <title>Sign-In</title>
         <link rel="stylesheet" href="{% static 'css/Register-css.css' %}">
         <script src="{% static 'js/Validate-Credit-Card.js' %}"></script>
+        <script src="{% static 'js/Validate-Phone-Number.js' %}"></script>
+        <script src="{% static 'js/Password_Valdation.js' %}"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -52,12 +54,13 @@
                                 type="text"
                             >
                             <input
-                                name="pan"
-                                id="myInput2"
+                                name="Phone_number"
+                                id="PhoneNumber"
                                 class="two-inputs"
                                 required
-                                placeholder="PAN"
+                                placeholder="Phone number"
                                 type="text"
+                                oninput="ValidatePhoneNumber()"
                             >
                             <input
                                 name="credit/debit"
@@ -71,7 +74,7 @@
                             >
                             <input
                                 name="password1"
-                                id="myInput2"
+                                id="Pass1"
                                 class="two-inputs"
                                 required
                                 placeholder="Password"
@@ -79,11 +82,12 @@
                             >
                             <input
                                 name="password2"
-                                id="myInput2"
+                                id="Pass2"
                                 class="two-inputs"
                                 required
                                 placeholder="re-enter password"
                                 type="password"
+                                oninput="ValidatePassword()"
                             >
                             <input id="submit" type="submit" value="Register">
                         </form>

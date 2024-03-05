@@ -82,11 +82,12 @@ def Signup(request):
     #     return HttpResponse("Method Not Allowed", status=405)
 
 
-# def getuserdata(request):
-#             data = userData.objects.all()
-#             serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'PanCard': user.PanCard, 'AdhaarCard': user.AdhaarCard} for user in data]
-#             # return JsonResponse({'user_data': serialized_data})
-#             return TemplateView.as_view(template_name=os.path.join(BASE_DIR, 'newreact/build/index.html'))(request, user_data=serialized_data)
+def getuserdata(request):
+            data = userData.objects.all()
+            serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'PanCard': user.PanCard, 'AdhaarCard': user.AdhaarCard} for user in data]
+            # return JsonResponse({'user_data': serialized_data})
+            print(serialized_data)
+            return TemplateView.as_view(template_name=os.path.join(BASE_DIR, 'newreact/build/index.html'))(request, user_data=serialized_data)
 
 
         # Return data as JSON response

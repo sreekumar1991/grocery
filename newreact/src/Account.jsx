@@ -41,7 +41,7 @@ export default function Account() {
   useEffect(() => {
     // Fetch data from Django API endpoint using Axios
     axios
-      .get("http://127.0.0.1:8000/") // Adjust the URL based on your Django API endpoint
+      .get("http://127.0.0.1:8000/account/") // Adjust the URL based on your Django API endpoint
       .then((response) => {
         setUserData(response.data.user_data);
       })
