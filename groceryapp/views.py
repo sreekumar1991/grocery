@@ -51,48 +51,32 @@ def Register(request):
 
 def Signup(request):
     if request.method == 'POST':
-        firstname = request.POST.get("firstname")
-        lastname = request.POST.get("lastname")
-        email = request.POST.get("email")
-        pancard = request.POST.get("pan")
-        debitcard = request.POST.get("credit/debit")
-        passwrd = request.POST.get("password1")
-        confirm_passwrd = request.POST.get("password2")
+        firstname = request.POST["firstname"]
+        lastname = request.POST["lastname"]
+        email = request.POST["email"]
+        Mobile = request.POST["Phone_number"]
+        Adhaar = request.POST["Adhaar_Card"]
 
-        user = User.objects.create_user(username=email, email=email, password=passwrd)
+        user = User.objects.create_user(username=email, email=email)
         user.first_name = firstname
         user.last_name = lastname
         user.save()
 
-        user_data = userData(FirstName=firstname, LastName=lastname, Email=email, PanCard=pancard, AdhaarCard=debitcard)
+        user_data = userData(FirstName=firstname, LastName=lastname, Email=email,  Mobile=Mobile, AdhaarCard=Adhaar)
         user_data.save()
 
-    #     data = userData.objects.all()
-    #     serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'PanCard': user.PanCard, 'AdhaarCard': user.AdhaarCard} for user in data]
-    #     return JsonResponse({'user_data': serialized_data})
-    #     # Return data as JSON response
-
-
-    # elif request.method == 'GET':
-    #     # Handle GET requests (e.g., render the signup form)
-    #    return render(request, 'X.html', {"data": data}) # Adjust the template name as needed
-
-    # else:
-    #     # Handle other HTTP methods if needed
-    #     return HttpResponse("Method Not Allowed", status=405)
-
+        return redirect('/')     
+    else:
+        return render(request,'register.html') 
+    
 
 def getuserdata(request):
-            data = userData.objects.all()
-            serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'PanCard': user.PanCard, 'AdhaarCard': user.AdhaarCard} for user in data]
-            # return JsonResponse({'user_data': serialized_data})
-            print(serialized_data)
-            return TemplateView.as_view(template_name=os.path.join(BASE_DIR, 'newreact/build/index.html'))(request, user_data=serialized_data)
-
-
-        # Return data as JSON response
-# this is the code to  retrieve all the data from database 
-    # data = userData.objects.all()
-    # serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'PanCard': user.PanCard, 'AdhaarCard': user.AdhaarCard} for user in data]
+    users = userData.objects.all()
+    serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'Phone': user.Mobile, 'AdhaarCard': user.AdhaarCard} for user in users]
+    
+    # If you want to return JSON response
     # return JsonResponse({'user_data': serialized_data})
     
+    # If you want to render a template with the serialized data
+    template_path = os.path.join(BASE_DIR, 'newreact/build/index.html')
+    return TemplateView.as_view(template_name=template_path)(request, user_data=serialized_data)

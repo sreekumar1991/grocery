@@ -6,7 +6,7 @@ class userData(models.Model):
     FirstName = models.CharField(max_length=100)
     LastName = models.CharField(max_length=100)
     Email = models.CharField(max_length=100)
-    PanCard = models.CharField(max_length=10)
+    Mobile = models.CharField(max_length=10)
     AdhaarCard = models.IntegerField(default=0)
 
 
