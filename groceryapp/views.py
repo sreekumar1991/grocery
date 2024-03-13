@@ -8,6 +8,7 @@ from django.views.generic import TemplateView
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 import os
+import numpy as np
 
 def index(request):
     return render(request,'index.html')
@@ -70,13 +71,36 @@ def Signup(request):
         return render(request,'register.html') 
     
 
-def getuserdata(request):
+
+def account(request):
     users = userData.objects.all()
     serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'Phone': user.Mobile, 'AdhaarCard': user.AdhaarCard} for user in users]
     
     # If you want to return JSON response
     # return JsonResponse({'user_data': serialized_data})
     
+
+        
     # If you want to render a template with the serialized data
+    # template_path = os.path.join(BASE_DIR, 'newreact/build/index.html')
+    # return TemplateView.as_view(template_name=template_path)(request, user_data=serialized_data)
+
+
+    # If you want to render a template without the serialized data
     template_path = os.path.join(BASE_DIR, 'newreact/build/index.html')
-    return TemplateView.as_view(template_name=template_path)(request, user_data=serialized_data)
+    return TemplateView.as_view(template_name=template_path)(request)
+  
+
+def user_data(request):
+    # users = userData.objects.all()
+    # serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'Phone': user.Mobile, 'AdhaarCard': user.AdhaarCard} for user in users]
+    
+ 
+    # # If you want to return JSON response
+    # return JsonResponse({'user_data': serialized_data})
+    
+    user = userData.objects.all()
+    serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'Phone': user.Mobile, 'AdhaarCard': user.AdhaarCard}]
+    
+    # Return JSON response with serialized data as an array
+    return JsonResponse(serialized_data, safe=False)

@@ -18,7 +18,6 @@ urlpatterns = [
     path('sign-in/', views.Signin, name='sign-in'),
     path('register/', views.Register, name='register'),
     path('signup/', views.Signup, name='signup'),
-    path('account/', views.getuserdata, name='getuserdata')
-
-
+    path('account/', views.account, name='account'),
+    path('Api/',views.user_data, name='Api')
 ]
