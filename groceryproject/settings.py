@@ -152,7 +152,7 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 #HTTPS Settings
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True   # SET SECURE_SSL_REDIRECT TO True ON PRODUCTION
+SECURE_SSL_REDIRECT = False  # SET SECURE_SSL_REDIRECT TO True ON PRODUCTION set to False ON  development 
 
 #RUN "check --deploy" before deploying porject 
 
