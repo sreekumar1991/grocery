@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Signup</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Register-page/Register2-css.css' %}">
+        <link rel="stylesheet" href="{% static 'css/Register-page/Regstyle.css' %}">
+        <script src="{% static 'js/Validate-Credit-Card.js' %}"></script>
+        <script src="{% static 'js/Validate-Phone-Number.js' %}"></script>
+        <script src="{% static 'js/Password_Valdation.js' %}"></script>
+    </head>
+    <body>
+        <div class="wrapper" style="background-image: url('{% static 'images/konstantin-evdokimov-JoCvHBm9IUo-unsplash.jpg' %}');">
+            <div class="inner">
+                <div class="image-holder">
+                    <img id="signup-image" src="{% static 'images/pexels-linda-ellershein-3127880.jpg' %}" alt="">
+                </div>
+                <form action="/signup/" id="two-inputs" method="post">
+                    {% csrf_token %}
+                    <h3>Registration Form</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="First Name" class="form-control">
+                        <input type="text" placeholder="Last Name" class="form-control">
+                    </div>
+                    <div class="form-wrapper">
+                        <input type="text" placeholder="Mobile Number " class="form-control">
+						<i class="zmdi zmdi-account"></i>
+						<input type="text" placeholder="Adhaar Number " class="form-control">
+						<i class="zmdi zmdi-account"></i>
+                    </div>
+                    <div class="form-wrapper">
+                        <input type="text" placeholder="Email Address" class="form-control">
+                        <i class="zmdi zmdi-email"></i>
+                    </div>
+                    <div class="form-wrapper">
+                        <select name="" id="" class="form-control">
+                            <option value="" disabled selected>Gender</option>
+                            <option value="male">Male</option>
+                            <option value="femal">Female</option>
+                            <option value="other">Other</option>
+                            <!-- Need to remove or change in future-->
+                        </select>
+                        <i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+                    </div>
+                    <div class="form-wrapper">
+                        <input type="password" placeholder="Password" class="form-control">
+                        <i class="zmdi zmdi-lock"></i>
+                    </div>
+                    <div class="form-wrapper">
+                        <input type="password" placeholder="Confirm Password" class="form-control">
+                        <i class="zmdi zmdi-lock"></i>
+                    </div>
+                    <button>
+                        Register
+                        <i class="zmdi zmdi-arrow-right"></i>
+                    </button>
+					<a href="/sign-in/"><h4 style="text-align: center;">login</h4></a>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

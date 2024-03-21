@@ -73,7 +73,7 @@ export default function Account() {
       axios
         .get("http://127.0.0.1:8000/Api") // Adjust the URL based on your Django API endpoint
         .then((response) => {
-          setUserData(response);
+          setUserData(response.data.user_data);
         })
         .catch((error) => {
           console.error("Error fetching user data:", error);
@@ -81,16 +81,8 @@ export default function Account() {
     };
     fetchUsers();
   }, []);
-
-  console.log("X",userData);
-
-  // data fetching needs to be fixed and endpint security measures
-  const user_data = userData[1]
- console.log(user_data)
-
-
-  
-
+ 
+  console.log("X",userData[5]);
 
 
   return (
