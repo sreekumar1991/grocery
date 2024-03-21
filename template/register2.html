@@ -26,10 +26,22 @@
                         <input type="text" placeholder="Last Name" class="form-control">
                     </div>
                     <div class="form-wrapper">
-                        <input type="text" placeholder="Mobile Number " class="form-control">
-						<i class="zmdi zmdi-account"></i>
-						<input type="text" placeholder="Adhaar Number " class="form-control">
-						<i class="zmdi zmdi-account"></i>
+                        <input
+                            id="PhoneNumber"
+                            type="text"
+                            placeholder="Mobile Number "
+                            class="form-control"
+                            oninput="ValidatePhoneNumber()"
+                        >
+                        <i class="zmdi zmdi-account"></i>
+                        <input
+                            id="creditCardNumber"
+                            type="text"
+                            placeholder="Adhaar Number "
+                            class="form-control"
+                            oninput="validateCreditCardInput()"
+                        >
+                        <i class="zmdi zmdi-account"></i>
                     </div>
                     <div class="form-wrapper">
                         <input type="text" placeholder="Email Address" class="form-control">
@@ -46,18 +58,31 @@
                         <i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
                     </div>
                     <div class="form-wrapper">
-                        <input type="password" placeholder="Password" class="form-control">
+                        <input
+                            id="Pass1"
+                            type="password"
+                            placeholder="Password"
+                            class="form-control"
+                        >
                         <i class="zmdi zmdi-lock"></i>
                     </div>
                     <div class="form-wrapper">
-                        <input type="password" placeholder="Confirm Password" class="form-control">
+                        <input
+                            id="Pass2"
+                            type="password"
+                            placeholder="Confirm Password"
+                            class="form-control"
+                            oninput="ValidatePassword()"
+                        >
                         <i class="zmdi zmdi-lock"></i>
                     </div>
                     <button>
                         Register
                         <i class="zmdi zmdi-arrow-right"></i>
                     </button>
-					<a href="/sign-in/"><h4 style="text-align: center;">login</h4></a>
+                    <a href="/sign-in/">
+                        <h4 style="text-align: center;">login</h4>
+                    </a>
                 </form>
             </div>
         </div>
