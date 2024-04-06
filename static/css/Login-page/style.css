@@ -318,6 +318,8 @@ body {
 .form-login-body {
   background-image: url(../../images/Login-page/bg.jpg);
   background-size: cover;
+  display: flex;
+  align-items: center;
 }
 @media screen and (max-width: 991px) {
   .form-login-body {
