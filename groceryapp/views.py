@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import userData 
 from django.contrib.auth import authenticate, login
@@ -48,8 +49,6 @@ def Signin(request):
 def Register(request):
     return render(request,'register2.html')
 
-
-
 def Signup(request):
     if request.method == 'POST':
         firstname = request.POST["firstname"]
@@ -57,27 +56,20 @@ def Signup(request):
         email = request.POST["email"]
         Mobile = request.POST["Phone_number"]
         Adhaar = request.POST["Adhaar_Card"]
+        genderinfo = request.POST["Gender"]
 
         user = User.objects.create_user(username=email, email=email)
         user.first_name = firstname
         user.last_name = lastname
         user.save()
 
-        user_data = userData(FirstName=firstname, LastName=lastname, Email=email,  Mobile=Mobile, AdhaarCard=Adhaar)
+        user_data = userData(FirstName=firstname, LastName=lastname, Email=email,  Mobile=Mobile, AdhaarCard=Adhaar, Gender=genderinfo)
         user_data.save()
 
         return redirect('/')     
     else:
-        return render(request,'register.html') 
+        return render(request,'register2.html')
     
-
-
-def account(request):
-    template_path = os.path.join(BASE_DIR, 'newreact/build/index.html')
-    return TemplateView.as_view(template_name=template_path)(request)
-  
-
-
 def user_data(request):
     # fetching all the objects from UserData class
     users = userData.objects.all()
@@ -86,3 +78,52 @@ def user_data(request):
     # If you want to return JSON response
     return JsonResponse({'user_data': serialized_data})
     
+
+
+
+
+
+
+# USER AUTHENTICATON should be in another seperate django app.
+
+# @login_required  # this is used for only allowing for authenticated users and this view only execute for authenticated users 
+def account(request):
+    template_path = os.path.join(BASE_DIR, 'newreact/build/index.html')
+    return render(request, template_path)
+    # return TemplateView.as_view(template_name=template_path)(request)
+  
+
+
+# TEST for user authentication ERORR IN THIS CODE 
+def login_test(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page.
+            # return redirect('success_url')
+            return redirect('/')  
+            # template_path = os.path.join(BASE_DIR, 'newreact/build/index.html')
+            # return TemplateView.as_view(template_name=template_path)(request)
+        else:
+            # Return an 'invalid login' error message.
+            return render(request, 'register2.html', {'error_message': 'Invalid username or password.'})
+    else:
+        # Display the login form.
+        return render(request,'Sign-in1.html')
+    
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -35,6 +35,7 @@ CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
 # Application definition
 INSTALLED_APPS = [
     'groceryapp',
+    "authentication", # App for user-authentication 
     'corsheaders',
     "whitenoise.runserver_nostatic",
     "django.contrib.admin",

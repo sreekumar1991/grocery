@@ -561,6 +561,7 @@
                     <div class="product-categori">
                         <div class="search-product">
                             <form action="#">
+                                {% csrf_token %}
                                 <input class="form-control" placeholder="Search here..." type="text">
                                 <button type="submit"> <i class="fa fa-search"></i> </button>
                             </form>
@@ -724,6 +725,7 @@
 						<div class="footer-top-box">
 							<h3>Newsletter</h3>
 							<form class="newsletter-box">
+                                {% csrf_token %}
 								<div class="form-group">
 									<input class="" type="email" name="Email" placeholder="Email Address*" />
 									<i class="fa fa-envelope"></i>

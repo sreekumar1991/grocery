@@ -44,15 +44,16 @@
                             <div class="detailsh">
                                 <img class="help" src="{% static 'images/Login-page/help.png' %}" alt="">
                                 <h3>Welcome To Freshshop</h3>
-                                <p>blow off well pardon me old lurgy absolutely bladdered bodge</p>
+                                <p>Welcome! We're thrilled to have you here. Feel free to explore and make yourself at home</p>
                             </div>
                         </div>
                         <div class="col-md-5 loginform">
                             <h4>Welcome Back</h4>
                             <p>Signin to your Account</p>
                             <div class="login-det">
-                                <form action="/register/">
-                                <div class="form-row">
+                                <form method="post" action="/Login/">
+                                    {% csrf_token %}
+                                    <div class="form-row">
                                         <label for="">Username</label>
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
@@ -61,13 +62,14 @@
                                                 </span>
                                             </div>
                                             <input
-                                                name=""
+                                                name="username"
                                                 id="Text1"
                                                 type="text"
                                                 class="form-control"
                                                 placeholder="Enter Username"
                                                 aria-label="Username"
                                                 aria-describedby="basic-addon1"
+                                                required
                                             >
                                         </div>
                                     </div>
@@ -81,19 +83,21 @@
                                             </div>
                                             <input
                                                 id="Text2"
-                                                name=""
+                                                name="password"
                                                 type="password"
                                                 class="form-control"
                                                 placeholder="Enter Password"
                                                 aria-label="Username"
                                                 aria-describedby="basic-addon1"
-                                            >
+                                                required  
+                                            > <!-- Add the required attribute to  prevent from submiting empty fields -->
                                         </div>
                                     </div>
                                     <p class="forget">
                                         <a href="">Forget Password?</a>
                                     </p>
-                                    <button class="btn btn-sm btn-danger" onclick="performLogin()">Login</button>      <!--style needs to be changed-->
+                                    <button class="btn btn-sm btn-danger" onclick="performLogin()">Login</button>
+                                    <!--style needs to be changed-->
                                 </form>
                                 <!-- <button onclick="performLogin() ">click</button> -->
                                 <div class="social-link">

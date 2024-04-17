@@ -18,37 +18,59 @@
                 <div class="image-holder">
                     <img id="signup-image" src="{% static 'images/pexels-linda-ellershein-3127880.jpg' %}" alt="">
                 </div>
-                <form action="/signup/" id="two-inputs" method="post">
+                <form method="post" action="/signup/" id="two-inputs">
                     {% csrf_token %}
                     <h3>Registration Form</h3>
                     <div class="form-group">
-                        <input type="text" placeholder="First Name" class="form-control">
-                        <input type="text" placeholder="Last Name" class="form-control">
+                        <input
+                            name="firstname"
+                            type="text"
+                            placeholder="First Name"
+                            class="form-control"
+                            required 
+                        >
+                        <input
+                            name="lastname"
+                            type="text"
+                            placeholder="Last Name"
+                            class="form-control"
+                            required 
+                        >
                     </div>
                     <div class="form-wrapper">
                         <input
+                            name="Phone_number"
                             id="PhoneNumber"
                             type="text"
                             placeholder="Mobile Number "
                             class="form-control"
                             oninput="ValidatePhoneNumber()"
+                            required 
                         >
                         <i class="zmdi zmdi-account"></i>
                         <input
+                            name="Adhaar_Card"
                             id="creditCardNumber"
                             type="text"
                             placeholder="Adhaar Number "
                             class="form-control"
                             oninput="validateCreditCardInput()"
+                            required 
                         >
                         <i class="zmdi zmdi-account"></i>
                     </div>
                     <div class="form-wrapper">
-                        <input type="text" placeholder="Email Address" class="form-control">
+                        <input
+                            name="email"
+                            type="text"
+                            placeholder="Email Address"
+                            class="form-control"
+                            required 
+                        >
                         <i class="zmdi zmdi-email"></i>
                     </div>
                     <div class="form-wrapper">
-                        <select name="" id="" class="form-control">
+                        <select  required  name="Gender" id="" class="form-control">
                             <option value="" disabled selected>Gender</option>
                             <option value="male">Male</option>
                             <option value="femal">Female</option>
@@ -59,20 +81,24 @@
                     </div>
                     <div class="form-wrapper">
                         <input
+                            name="password1"
                             id="Pass1"
                             type="password"
                             placeholder="Password"
                             class="form-control"
+                            required 
                         >
                         <i class="zmdi zmdi-lock"></i>
                     </div>
                     <div class="form-wrapper">
                         <input
+                            name="password2"
                             id="Pass2"
                             type="password"
                             placeholder="Confirm Password"
                             class="form-control"
                             oninput="ValidatePassword()"
+                            required 
                         >
                         <i class="zmdi zmdi-lock"></i>
                     </div>
