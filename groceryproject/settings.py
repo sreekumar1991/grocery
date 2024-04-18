@@ -22,8 +22,23 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 #For Website securty Secret_key must be hidden.
-with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
-    SECRET_KEY = f.read().strip()
+
+# with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
+#     SECRET_KEY = f.read().strip()
+
+
+
+# Retrieve secret key from environment variable
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+# If SECRET_KEY environment variable is not set, provide a default value or raise an error
+if not SECRET_KEY:
+    raise ValueError("SECRET_KEY environment variable is not set")
+
+
+
+
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
