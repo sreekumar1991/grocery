@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
+import dotenv
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,12 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 #For Website securty Secret_key must be hidden.
 
-# with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
-#     SECRET_KEY = f.read().strip()
+# Load environment variables from .env file
 
+dotenv.load_dotenv("config.env")
 
-
-# Retrieve secret key from environment variable
+# Retrieve the SECRET_KEY variable from the environment
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # If SECRET_KEY environment variable is not set, provide a default value or raise an error
@@ -170,7 +170,7 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = False  # SET SECURE_SSL_REDIRECT TO True ON PRODUCTION set to False ON  development 
 
-#RUN "check --deploy" before deploying porject 
+#RUN "check --deploy" before deploying porject   
 
 #HSTS Settings
 SECURE_HSTS_SECONDS = 31536000 
@@ -181,3 +181,7 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+
+
