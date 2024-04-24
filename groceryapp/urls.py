@@ -17,9 +17,10 @@ urlpatterns = [
     path('our-location/', views.Location, name='our-locaion'),
     path('sign-in/', views.Signin, name='sign-in'),
     path('register/', views.Register, name='register'),
-    path('signup/', views.Signup, name='signup'),
-    path('account/', views.account, name='account'),
+    path('signup/', views.Signup, name='sign-up'),
     path('Api/',views.user_data, name='Api'),
-    path('Login/',views.login_test, name='login')
+    path('Login/', views.Login_view, name='Login'),
+    
+    
 
 ]

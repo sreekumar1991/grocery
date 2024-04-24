@@ -1,15 +1,11 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import userData 
-from django.contrib.auth import authenticate, login
-from django.http import HttpResponse
 from django.http import JsonResponse
-from django.views.generic import TemplateView
 from pathlib import Path
+from django.contrib import messages
 BASE_DIR = Path(__file__).resolve().parent.parent
-import os
-
+from django.contrib.auth import authenticate, login, logout
 
 def index(request):
     return render(request,'index.html')
@@ -50,26 +46,40 @@ def Register(request):
     return render(request,'register2.html')
 
 def Signup(request):
+
     if request.method == 'POST':
         firstname = request.POST["firstname"]
         lastname = request.POST["lastname"]
         email = request.POST["email"]
+        Password1 = request.POST["password1"]
+        Password2 = request.POST["password2"]
         Mobile = request.POST["Phone_number"]
         Adhaar = request.POST["Adhaar_Card"]
         genderinfo = request.POST["Gender"]
 
-        user = User.objects.create_user(username=email, email=email)
-        user.first_name = firstname
-        user.last_name = lastname
-        user.save()
+        if Password1 == Password2:
+            if User.objects.filter(username = email).exists():
+                  print("username alredy exisit")
+                  return render(request,'register2.html')
+   
+            else:
+                # Create the user
+                User.objects.create_user(username=email, email=email, password=Password1, first_name=firstname, last_name=lastname)
 
-        user_data = userData(FirstName=firstname, LastName=lastname, Email=email,  Mobile=Mobile, AdhaarCard=Adhaar, Gender=genderinfo)
-        user_data.save()
+                # Create the userData object
+                userData.objects.create(FirstName=firstname, LastName=lastname, Email=email, Mobile=Mobile, AdhaarCard=Adhaar, Gender=genderinfo)
 
-        return redirect('/')     
+                # Redirect to the homepage
+                return redirect('/')
+
+        else:
+             print("password not match")
+             return redirect('/register/')   
     else:
-        return render(request,'register2.html')
+         return render(request,'register2.html')
     
+    
+
 def user_data(request):
     # fetching all the objects from UserData class
     users = userData.objects.all()
@@ -80,50 +90,25 @@ def user_data(request):
     
 
 
-
-
-
-
-# USER AUTHENTICATON should be in another seperate django app.
-
-# @login_required  # this is used for only allowing for authenticated users and this view only execute for authenticated users 
-def account(request):
-    template_path = os.path.join(BASE_DIR, 'newreact/build/index.html')
-    return render(request, template_path)
-    # return TemplateView.as_view(template_name=template_path)(request)
-  
-
-
-# TEST for user authentication ERORR IN THIS CODE 
-def login_test(request):
+def Login_view(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+        # Assuming your form has 'username' and 'password' fields
+        username = request.POST.get('Username')
+        password = request.POST.get('Password')
+
         user = authenticate(request, username=username, password=password)
+        print(user)
         if user is not None:
             login(request, user)
-            # Redirect to a success page.
-            # return redirect('success_url')
-            return redirect('/')  
-            # template_path = os.path.join(BASE_DIR, 'newreact/build/index.html')
-            # return TemplateView.as_view(template_name=template_path)(request)
+            # Redirect to a success page, or somewhere else
+            print("log in success")
+            return redirect('/account/')  # Assuming 'home' is another URL pattern
         else:
-            # Return an 'invalid login' error message.
-            return render(request, 'register2.html', {'error_message': 'Invalid username or password.'})
+            # Return an error message if authentication fails
+            # messages.error(request, 'Invalid username or password.')
+            # You can redirect back to the login page or render it again with the form
+            print("log in failed")
+            return redirect('/sign-in/')  # Assuming 'login' is the name of the login page
     else:
-        # Display the login form.
-        return render(request,'Sign-in1.html')
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
+        # If the request method is GET, render the login form
+        return render(request, 'Sign-in1.html')  # Assuming you have a template named 'login.html' for the login page

@@ -51,7 +51,7 @@
                             <h4>Welcome Back</h4>
                             <p>Signin to your Account</p>
                             <div class="login-det">
-                                <form method="post" action="/Login/">
+                                <form method="post" action="{% url 'Login' %}">
                                     {% csrf_token %}
                                     <div class="form-row">
                                         <label for="">Username</label>
@@ -62,7 +62,7 @@
                                                 </span>
                                             </div>
                                             <input
-                                                name="username"
+                                                name="Username"
                                                 id="Text1"
                                                 type="text"
                                                 class="form-control"
@@ -83,7 +83,7 @@
                                             </div>
                                             <input
                                                 id="Text2"
-                                                name="password"
+                                                name="Password"
                                                 type="password"
                                                 class="form-control"
                                                 placeholder="Enter Password"

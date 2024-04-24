@@ -16,8 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include 
-
-######################### REACT ############################
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve
@@ -25,7 +23,7 @@ from django.views.generic import TemplateView
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 import os
-######################    REACT  ######################
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -34,7 +32,5 @@ urlpatterns = [
     path('favicon.ico', serve, {'document_root': settings.REACT_PUBLIC_DIR, 'path': 'favicon.ico'}, name='favicon'),# To load favicon 4 react page
 ]
 
-########
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-#######

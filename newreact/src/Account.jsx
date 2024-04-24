@@ -82,7 +82,7 @@ export default function Account() {
     fetchUsers();
   }, []);
  
-  console.log("X",userData[5]);
+  console.log("X",userData);
 
 
   return (
