@@ -1,6 +1,6 @@
 from django.urls import path,include
 from. import views
-
+from .views import ReactPageView
 
 
 
@@ -20,6 +20,7 @@ urlpatterns = [
     path('signup/', views.Signup, name='sign-up'),
     path('Api/',views.user_data, name='Api'),
     path('Login/', views.Login_view, name='Login'),
+    path("account/", ReactPageView.as_view(), name='myaccount'),
     
     
 

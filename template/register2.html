@@ -18,7 +18,7 @@
                 <div class="image-holder">
                     <img id="signup-image" src="{% static 'images/pexels-linda-ellershein-3127880.jpg' %}" alt="">
                 </div>
-                <form method="post" action="/signup/" id="two-inputs">
+                <form method="post" action="{% url 'sign-up' %}" id="two-inputs">
                     {% csrf_token %}
                     <h3>Registration Form</h3>
                     <div class="form-group">

@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
+from django.views.generic import TemplateView
 from django.contrib.auth.models import User
 from .models import userData 
 from django.http import JsonResponse
 from pathlib import Path
 from django.contrib import messages
+import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 from django.contrib.auth import authenticate, login, logout
 
@@ -44,6 +46,12 @@ def Signin(request):
 
 def Register(request):
     return render(request,'register2.html')
+
+# React page loading index.html.
+
+class ReactPageView(TemplateView):
+    template_name = os.path.join(BASE_DIR,'newreact/build/index.html')
+
 
 def Signup(request):
 

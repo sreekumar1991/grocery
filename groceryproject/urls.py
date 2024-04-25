@@ -19,7 +19,6 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve
-from django.views.generic import TemplateView
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 import os
@@ -27,10 +26,9 @@ import os
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('',include('groceryapp.urls')),
-    path("account/",TemplateView.as_view(template_name= os.path.join(BASE_DIR,'newreact/build/index.html'))), # React page loading index.html 
+    path('',include('groceryapp.urls')), 
     path('favicon.ico', serve, {'document_root': settings.REACT_PUBLIC_DIR, 'path': 'favicon.ico'}, name='favicon'),# To load favicon 4 react page
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# if settings.DEBUG:
+#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
