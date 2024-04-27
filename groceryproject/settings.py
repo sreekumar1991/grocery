@@ -184,11 +184,6 @@ SECURE_REFERRER_POLICY = "Strict-origin"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-<<<<<<< HEAD
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
-
-=======
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
->>>>>>> 72f2c2847bba00895df7b6c937d3199c5a0a8b84
