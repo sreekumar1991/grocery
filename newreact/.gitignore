@@ -6,14 +6,12 @@
 .pnp.js
 
 
-
-# Ignore .env file
-.env
-
 # testing
 /coverage
 
 # production
+.env
+build/
 
 
 
