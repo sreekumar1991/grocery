@@ -60,10 +60,10 @@
                     </div>
                     <div class="our-link">
                         <ul>
-                            <li><a href="/account/"><i class="fa fa-user s_color"></i> My Account</a></li>
-                            <li><a href="/our-location/"><i class="fas fa-location-arrow"></i> Our location</a></li>
+                            <li><a href="{%url 'myaccount' %}"><i class="fa fa-user s_color"></i> My Account</a></li>
+                            <li><a href="{% url 'our-locaion' %}"><i class="fas fa-location-arrow"></i> Our location</a></li>
                             <li><a href="{% url 'contactus' %}"><i class="fas fa-headset"></i> Contact Us</a></li>
-                        </ul>
+                        </ul>    
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -539,6 +539,7 @@
 						<div class="footer-top-box">
 							<h3>Newsletter</h3>
 							<form class="newsletter-box">
+                                {% csrf_token %}
 								<div class="form-group">
 									<input class="" type="email" name="Email" placeholder="Email Address*" />
 									<i class="fa fa-envelope"></i>

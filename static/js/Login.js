@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const login = document.querySelectorAll("#login");
   console.log(login[0]);
 
-  login[0].addEventListener("click", () => {
+  login[0].addEventListener("click",() => {
     window.location.href = "/sign-in/";
   });
 });

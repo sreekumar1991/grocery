@@ -38,16 +38,48 @@ import Grid from "./Grid.jsx";
 export default function Account() {
   const [userData, setUserData] = useState([]);
 
+  // useEffect(() => {
+  //   // Fetch data from Django API endpoint using Axios
+  //   axios
+  //     .get("http://127.0.0.1:8000/account/") // Adjust the URL based on your Django API endpoint
+  //     .then((response) => {
+  //       setUserData(response.data.user_data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching user data:", error);
+  //     });
+  // }, []);
+
+  // useEffect(() => {
+  //   const fetchUsers = async () => {
+  //     axios
+  //     .get("http://127.0.0.1:8000/account/") // Adjust the URL based on your Django API endpoint
+  //     .then((response) => {
+  //       setUserData(response);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching user data:", error);
+  //     });
+  //   };
+  //   fetchUsers();
+  // }, []);
+
+  // console.log("X", userData);
+
+  // Fetching User Data
+
   useEffect(() => {
-    // Fetch data from Django API endpoint using Axios
-    axios
-      .get("http://127.0.0.1:8000/") // Adjust the URL based on your Django API endpoint
-      .then((response) => {
-        setUserData(response.data.user_data);
-      })
-      .catch((error) => {
-        console.error("Error fetching user data:", error);
-      });
+    const fetchUsers = async () => {
+      axios
+        .get(process.env.REACT_APP_CONFIG) // Adjust the URL and made it environment variable
+        .then((response) => {
+          setUserData(response.data.user_data);
+        })
+        .catch((error) => {
+          console.error("Error fetching user data:", error);
+        });
+    };
+    fetchUsers();
   }, []);
 
   console.log("X", userData);

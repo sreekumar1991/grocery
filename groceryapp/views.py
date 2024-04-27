@@ -1,13 +1,12 @@
 from django.shortcuts import render, redirect
+from django.views.generic import TemplateView
 from django.contrib.auth.models import User
 from .models import userData 
-from django.contrib.auth import authenticate, login
-from django.http import HttpResponse
 from django.http import JsonResponse
-from django.views.generic import TemplateView
 from pathlib import Path
-BASE_DIR = Path(__file__).resolve().parent.parent
 import os
+BASE_DIR = Path(__file__).resolve().parent.parent
+from django.contrib.auth import authenticate, login, logout
 
 def index(request):
     return render(request,'index.html')
@@ -45,53 +44,83 @@ def Signin(request):
     return render(request,'Sign-in1.html')
 
 def Register(request):
-    return render(request,'register.html')
+    return render(request,'register2.html')
 
+# React page loading index.html.
+
+class ReactPageView(TemplateView):
+    template_name = os.path.join(BASE_DIR,'newreact/build/index.html')
 
 
 def Signup(request):
+
     if request.method == 'POST':
-        firstname = request.POST.get("firstname")
-        lastname = request.POST.get("lastname")
-        email = request.POST.get("email")
-        pancard = request.POST.get("pan")
-        debitcard = request.POST.get("credit/debit")
-        passwrd = request.POST.get("password1")
-        confirm_passwrd = request.POST.get("password2")
+        firstname = request.POST["firstname"]
+        lastname = request.POST["lastname"]
+        email = request.POST["email"]
+        Password1 = request.POST["password1"]
+        Password2 = request.POST["password2"]
+        Mobile = request.POST["Phone_number"]
+        Adhaar = request.POST["Adhaar_Card"]
+        genderinfo = request.POST["Gender"]
 
-        user = User.objects.create_user(username=email, email=email, password=passwrd)
-        user.first_name = firstname
-        user.last_name = lastname
-        user.save()
+        if Password1 == Password2:
+            if User.objects.filter(username = email).exists():
+                  print("username alredy exisit")
+                  return render(request,'register2.html')
+   
+            else:
+                # Create the user
+                User.objects.create_user(username=email, email=email, password=Password1, first_name=firstname, last_name=lastname)
 
-        user_data = userData(FirstName=firstname, LastName=lastname, Email=email, PanCard=pancard, AdhaarCard=debitcard)
-        user_data.save()
+                # Create the userData object
+                userData.objects.create(FirstName=firstname, LastName=lastname, Email=email, Mobile=Mobile, AdhaarCard=Adhaar, Gender=genderinfo)
 
-    #     data = userData.objects.all()
-    #     serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'PanCard': user.PanCard, 'AdhaarCard': user.AdhaarCard} for user in data]
-    #     return JsonResponse({'user_data': serialized_data})
-    #     # Return data as JSON response
+                # Redirect to the homepage
+                return redirect('/')
 
-
-    # elif request.method == 'GET':
-    #     # Handle GET requests (e.g., render the signup form)
-    #    return render(request, 'X.html', {"data": data}) # Adjust the template name as needed
-
-    # else:
-    #     # Handle other HTTP methods if needed
-    #     return HttpResponse("Method Not Allowed", status=405)
-
-
-# def getuserdata(request):
-#             data = userData.objects.all()
-#             serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'PanCard': user.PanCard, 'AdhaarCard': user.AdhaarCard} for user in data]
-#             # return JsonResponse({'user_data': serialized_data})
-#             return TemplateView.as_view(template_name=os.path.join(BASE_DIR, 'newreact/build/index.html'))(request, user_data=serialized_data)
-
-
-        # Return data as JSON response
-# this is the code to  retrieve all the data from database 
-    # data = userData.objects.all()
-    # serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'PanCard': user.PanCard, 'AdhaarCard': user.AdhaarCard} for user in data]
-    # return JsonResponse({'user_data': serialized_data})
+        else:
+             print("password not match")
+             return redirect('/register/')   
+    else:
+         return render(request,'register2.html')
     
+    
+
+def user_data(request):
+    # fetching all the objects from UserData class
+    users = userData.objects.all()
+    serialized_data = [{'FirstName': user.FirstName, 'LastName': user.LastName, 'Email': user.Email, 'Phone': user.Mobile, 'AdhaarCard': user.AdhaarCard} for user in users]
+   
+    # If you want to return JSON response
+    return JsonResponse({'user_data': serialized_data})
+    
+
+
+def Login_view(request):
+    if request.method == 'POST':
+        # Assuming your form has 'username' and 'password' fields
+        username = request.POST.get('Username')
+        password = request.POST.get('Password')
+
+        user = authenticate(request, username=username, password=password)
+        print(user)
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page, or somewhere else
+            print("log in success")
+            return redirect('/account/')  # Assuming 'home' is another URL pattern
+        else:
+            # Return an error message if authentication fails
+            # messages.error(request, 'Invalid username or password.')
+            # You can redirect back to the login page or render it again with the form
+            print("log in failed")
+            return redirect('/sign-in/')  # Assuming 'login' is the name of the login page
+    else:
+        # If the request method is GET, render the login form
+        return render(request, 'Sign-in1.html')  # Assuming you have a template named 'login.html' for the login page
+    
+
+
+
+

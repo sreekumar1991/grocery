@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
+import dotenv
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.git
@@ -22,15 +23,34 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 #For Website securty Secret_key must be hidden.
-with open(os.path.join(BASE_DIR,'secret_key.txt')) as f:
-    SECRET_KEY = f.read().strip()
+
+# Load environment variables from .env file
+
+dotenv.load_dotenv("config.env")
+
+# Retrieve the SECRET_KEY variable from the environment
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+# If SECRET_KEY environment variable is not set, provide a default value or raise an error
+if not SECRET_KEY:
+    raise ValueError("SECRET_KEY environment variable is not set")
+
+
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['*']
 
-CORS_ALLOWED_ORIGINS = ["https://localhost:3000"]
-   
+
+# Retrieve the value of ALLOWED_HOSTS from the environment variable
+# Split the value by comma to create a list of allowed hosts
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
+
+# Retrieve the value of CORS_ALLOWED_ORIGINS from the environment variable
+# Wrap the value in a list to create a list of allowed origins
+CORS_ALLOWED_ORIGINS = [os.environ.get('CORS_ALLOWED_ORIGINS', '')]
+
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -140,7 +160,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'static'), os.path.join(BASE_DIR,'newreact/build/static'),]
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'static') ,os.path.join(BASE_DIR,'newreact/build/static')] # react static files are important
 
 REACT_PUBLIC_DIR = os.path.join(BASE_DIR, 'newreact/public')
 
@@ -152,14 +172,29 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 #HTTPS Settings
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False  # SET SECURE_SSL_REDIRECT TO True ON PRODUCTION set to False ON  development 
+
+#RUN "check --deploy" before deploying porject   
 
 #HSTS Settings
 SECURE_HSTS_SECONDS = 31536000 
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_REFERRER_POLICY = "Strict-origin"
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
+<<<<<<< HEAD
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+=======
+<<<<<<< HEAD
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+
+=======
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+>>>>>>> 72f2c2847bba00895df7b6c937d3199c5a0a8b84
+>>>>>>> 2342ce175a01e3485ce9ac6c0a8304fff22209df

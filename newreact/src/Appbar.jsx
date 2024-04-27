@@ -55,8 +55,7 @@ function ResponsiveAppBar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://127.0.0.1:8000/");
-        // setData(response.data);
+        const response = await axios.get(process.env.REACT_APP_API_URL);
         setData2(response.request.responseURL);
       } catch (error) {
         console.error("Error fetching data from Django API", error);
@@ -65,11 +64,7 @@ function ResponsiveAppBar() {
     fetchData();
   }, []);
 
-  // console.log("TEST2", data);
-  console.log("TEST", data2);
-
   function goBack() {
-    // window.history.back();
     window.location.href = "/";
   }
 

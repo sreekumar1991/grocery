@@ -19,6 +19,7 @@
                 <div id="signin-part">
                     <h3 id="label">Sign In</h3>
                     <form onsubmit="return validateForm();" id="two-inputs" action="javascript:void(0);">
+                        {% csrf_token %}
                         <input
                             id="myInput1"
                             class="two-inputs"
