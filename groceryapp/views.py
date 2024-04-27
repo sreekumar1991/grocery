@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from .models import userData 
 from django.http import JsonResponse
 from pathlib import Path
-from django.contrib import messages
 import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 from django.contrib.auth import authenticate, login, logout
@@ -120,3 +119,8 @@ def Login_view(request):
     else:
         # If the request method is GET, render the login form
         return render(request, 'Sign-in1.html')  # Assuming you have a template named 'login.html' for the login page
+    
+
+
+
+

@@ -38,13 +38,17 @@ if not SECRET_KEY:
 
 
 
-
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['*']
 
-CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
+
+# Retrieve the value of ALLOWED_HOSTS from the environment variable
+# Split the value by comma to create a list of allowed hosts
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
+
+# Retrieve the value of CORS_ALLOWED_ORIGINS from the environment variable
+# Wrap the value in a list to create a list of allowed origins
+CORS_ALLOWED_ORIGINS = [os.environ.get('CORS_ALLOWED_ORIGINS', '')]
    
 
 # Application definition
@@ -155,7 +159,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'static'),]  #os.path.join(BASE_DIR,'newreact/build/static')
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'static') ,os.path.join(BASE_DIR,'newreact/build/static')] # react static files are important
 
 REACT_PUBLIC_DIR = os.path.join(BASE_DIR, 'newreact/public')
 

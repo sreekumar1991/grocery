@@ -28,7 +28,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('',include('groceryapp.urls')), 
     path('favicon.ico', serve, {'document_root': settings.REACT_PUBLIC_DIR, 'path': 'favicon.ico'}, name='favicon'),# To load favicon 4 react page
-]
+] 
 
-# if settings.DEBUG:
-#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
