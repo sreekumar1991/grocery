@@ -13,7 +13,7 @@ import os
 import dotenv
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Build paths inside the project like this: BASE_DIR / 'subdir'.git
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -41,7 +41,6 @@ if not SECRET_KEY:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-
 # Retrieve the value of ALLOWED_HOSTS from the environment variable
 # Split the value by comma to create a list of allowed hosts
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
@@ -49,7 +48,7 @@ ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
 # Retrieve the value of CORS_ALLOWED_ORIGINS from the environment variable
 # Wrap the value in a list to create a list of allowed origins
 CORS_ALLOWED_ORIGINS = [os.environ.get('CORS_ALLOWED_ORIGINS', '')]
-   
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -185,7 +184,11 @@ SECURE_REFERRER_POLICY = "Strict-origin"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
+<<<<<<< HEAD
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 
+=======
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+>>>>>>> 72f2c2847bba00895df7b6c937d3199c5a0a8b84
