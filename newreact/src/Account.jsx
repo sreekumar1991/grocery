@@ -82,8 +82,6 @@ export default function Account() {
     fetchUsers();
   }, []);
 
-  console.log("X", userData);
-
   return (
     <div id="Outside_mainddiv">
       {/* <div id="Sidebar">
