@@ -50,6 +50,7 @@ ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
 CORS_ALLOWED_ORIGINS = [os.environ.get('CORS_ALLOWED_ORIGINS', '')]
 
 
+
 # Application definition
 INSTALLED_APPS = [
     'groceryapp',
@@ -109,17 +110,13 @@ WSGI_APPLICATION = "groceryproject.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "Users",
-        "USER": "postgres",
-        "PASSWORD": "6073",
-        "HOST": "localhost"
-
+        "ENGINE": os.environ.get("DATABASE_ENGINE"),
+        "NAME": os.environ.get("DATABASE_NAME"),
+        "USER": os.environ.get("DATABASE_USER"),
+        "PASSWORD": os.environ.get("DATABASE_PASSWORD"),
+        "HOST": os.environ.get("DATABASE_HOST"),
     }
 }
-
-
-
 
 
 # Password validation
@@ -178,7 +175,7 @@ SECURE_SSL_REDIRECT = False  # SET SECURE_SSL_REDIRECT TO True ON PRODUCTION set
 SECURE_HSTS_SECONDS = 31536000 
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_REFERRER_POLICY = "Strict-origin"
+SECURE_REFERRER_POLICY = "strict-origin"
 
 
 # Default primary key field type
