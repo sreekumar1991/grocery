@@ -14,23 +14,6 @@
         <link rel="stylesheet" href="{% static 'Plugins-for-sign-in-page/slider/css/owl.carousel.min.css' %}">
         <link rel="stylesheet" href="{% static 'Plugins-for-sign-in-page/slider/css/owl.theme.default.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/Login-page/style.css' %}">
-        <script>
-            function performLogin() {
-                // Get the input values by ID
-                const usernameInput = document.getElementById('Text1');
-                const passwordInput = document.getElementById('Text2');
-    
-                // Get the values entered by the user
-                const username = usernameInput.value;
-                const password = passwordInput.value;
-    
-                // Display the values (you can do whatever you want with them)
-                console.log('Username:', username);
-                console.log('Password:', password);
-
-                // Here you can add further logic, e.g., sending the data to a server, etc.
-            }
-        </script>
     </head>
     <body class="form-login-body">
         <div class="container">
@@ -89,14 +72,15 @@
                                                 placeholder="Enter Password"
                                                 aria-label="Username"
                                                 aria-describedby="basic-addon1"
-                                                required  
-                                            > <!-- Add the required attribute to  prevent from submiting empty fields -->
+                                                required
+                                            >
+                                            <!-- Add the required attribute to  prevent from submiting empty fields -->
                                         </div>
                                     </div>
                                     <p class="forget">
                                         <a href="">Forget Password?</a>
                                     </p>
-                                    <button class="btn btn-sm btn-danger" onclick="performLogin()">Login</button>
+                                    <button class="btn btn-sm btn-danger">Login</button>
                                     <!--style needs to be changed-->
                                 </form>
                                 <!-- <button onclick="performLogin() ">click</button> -->
