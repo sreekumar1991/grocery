@@ -37,7 +37,6 @@ if not SECRET_KEY:
 
 
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -55,6 +54,7 @@ CORS_ALLOWED_ORIGINS = [os.environ.get('CORS_ALLOWED_ORIGINS', '')]
 INSTALLED_APPS = [
     'groceryapp',
     'corsheaders',
+    'csp',
     "whitenoise.runserver_nostatic",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -68,6 +68,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'corsheaders.middleware.CorsMiddleware',
+    'csp.middleware.CSPMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -99,14 +100,6 @@ WSGI_APPLICATION = "groceryproject.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
 
 DATABASES = {
     "default": {
@@ -176,6 +169,26 @@ SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_REFERRER_POLICY = "strict-origin"
+
+
+# Content Security Policy settings (csp)
+CSP_DEFAULT_SRC = ("'self'",)
+CSP_SCRIPT_SRC = ("'self'",)
+CSP_STYLE_SRC = ("'self'", "'unsafe-inline'")
+CSP_FONT_SRC = ("'self'",)
+CSP_IMG_SRC = ("'self'",)
+CSP_CONNECT_SRC = ("'self'",)
+CSP_FRAME_SRC = ("'none'",)
+CSP_OBJECT_SRC = ("'none'",)
+CSP_MEDIA_SRC = ("'self'",)
+CSP_FRAME_ANCESTORS = ("'none'",)
+CSP_FORM_ACTION = ("'self'",)
+CSP_BASE_URI = ("'self'",)
+
+
+
+
+
 
 
 # Default primary key field type
